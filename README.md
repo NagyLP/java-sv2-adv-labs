@@ -1,2 +1,1 @@
-# java-sv2-adv-labs
-** -= Java Haladó =- **
+# java-sv2-adv-labs-NagyLaszloPeter

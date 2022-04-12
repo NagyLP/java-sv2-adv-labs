@@ -1,3 +1,4 @@
 # java-strukturavalto2-halado
-# NLP
+ -= NLP =-
+
 Struktúraváltás Junior Vállalati Java backend fejlesztő tananyag

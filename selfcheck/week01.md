@@ -8,7 +8,7 @@
 * [X] [Unit tesztelés ígéretei videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10611068-unit-teszteles-igeretei)
 * [X] [Tesztesetek életciklusa videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10611085-tesztesetek-eletciklusa)
 * [X] [Tesztesetek életciklusa - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10611037-tesztesetek-eletciklusa-gyakorlat)
-* [ ] [Tesztesetek életciklusa - a BeforeEach annotált metódus kiszervezése - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10610982-tesztesetek-eletciklusa-a-beforeeach-annotalt-metodus-kiszervezese-gyakorlat)
+* [X] [Tesztesetek életciklusa - a BeforeEach annotált metódus kiszervezése - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10610982-tesztesetek-eletciklusa-a-beforeeach-annotalt-metodus-kiszervezese-gyakorlat)
 * [ ] Tesztesetek életciklusa gyakorlati feladat
 * [ ] [Elnevezések videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10610984-elnevezesek)
 * [ ] [Elnevezések gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10610980-elnevezesek-gyakorlat)

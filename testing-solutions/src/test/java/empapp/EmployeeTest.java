@@ -17,7 +17,7 @@ public class EmployeeTest {
     }
 
     @BeforeAll
-    static  void beforeAll(){
+    static void before_All() {
         System.out.println("\nBEFORE ALL");
     }
 
@@ -32,6 +32,8 @@ public class EmployeeTest {
 //    @Order(2)
 //    @Disabled("Until fix Projektmunka Rendelés")
 //    @DisabledOnOs(OS.WINDOWS)
+//    @DisplayNameGeneration
+//            (DisplayNameGenerator.ReplaceUnderscores.class)
     void testGetAgeWithZero() {
         System.out.println("TC2");
         System.out.println(employee);

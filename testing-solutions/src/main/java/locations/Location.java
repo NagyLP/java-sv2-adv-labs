@@ -12,6 +12,14 @@ public class Location {
         this.longitude = longitude;
     }
 
+    public boolean isOnEquator() {
+        return latitude == 0;
+    }
+
+    public boolean isOnPrimeMeridian() {
+        return longitude == 0;
+    }
+
     public String getName() {
         return name;
     }

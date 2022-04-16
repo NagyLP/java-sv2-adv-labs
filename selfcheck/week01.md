@@ -40,5 +40,5 @@
 
 ### Konzultációs gyakorlati feladatok
 * [X] Hétfő - Elérések ellenőrzése, git repók létrehozása
-* [ ] Kedd - Gyakorlati feladat
-* [ ] Szerda - Gyakorlati feladat
+* [X] Kedd - Gyakorlati feladat
+* [X] Szerda - Gyakorlati feladat

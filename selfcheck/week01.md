@@ -30,8 +30,8 @@
 * [X] [JUnit legjobb gyakorlatok videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769735-junit-legjobb-gyakorlatok)
 
 ### AssertJ
-* [ ] [AssertJ videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464085-assertj)
-* [ ] [AssertJ - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464090-assertj-gyakorlat)
+* [X] [AssertJ videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464085-assertj)
+* [X] [AssertJ - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464090-assertj-gyakorlat)
 * [ ] AssertJ gyakorlati feladat
 ### Mockito
 * [ ] [Mockito videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464183-mockito)

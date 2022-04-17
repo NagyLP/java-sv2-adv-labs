@@ -7,6 +7,7 @@ import org.junit.jupiter.api.condition.OS;
 import static org.junit.jupiter.api.Assertions.*;
 
 //@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+//@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 
 public class EmployeeTest {
 

@@ -15,6 +15,7 @@ class LocationITest {
     String testName = "Budapest";
     double testLat = 47.497912;
     double testLon = 19.040235;
+    String testString = "Budapest,47.497912,19.040235";
 
     @BeforeEach
     void initLocationParser() {
@@ -22,7 +23,7 @@ class LocationITest {
     }
 
     @Test
-    @DisplayName("TEST-Create: Location-object is successfully. ")
+    @DisplayName("CREATE: Location-object is successfully. ")
     void testCreate() {
         Location location = new Location(testName, testLat, testLon);
 
@@ -32,7 +33,7 @@ class LocationITest {
     }
 
     @Test
-    @DisplayName("TEST-Parse: Location-object from Text is successfully.")
+    @DisplayName("OPERATION: Location-object from Text is successfully.")
     void testParse() {
         Location location = locationParser.parse(String.format("%s,%a,%a", testName, testLat, testLon));
 
@@ -44,7 +45,7 @@ class LocationITest {
     @Test
     @DisplayName("RETURN: Name's Latitude is on Equator")
     void testIsOnEquatorTrue() {
-        Location location =new Location(
+        Location location = new Location(
                 "Bonjol - Indonesia", 0.0, 100.222504);
         assertTrue(location.isOnEquator());
     }
@@ -52,7 +53,7 @@ class LocationITest {
     @Test
     @DisplayName("RETURN: Name's Latitude is NOT on Equator")
     void testIsOnEquatorFalse() {
-        Location location =new Location(
+        Location location = new Location(
                 testName, testLat, testLon);
         assertFalse(location.isOnEquator());
     }
@@ -60,7 +61,7 @@ class LocationITest {
     @Test
     @DisplayName("RETURN: Name's Latitude is on Greenwich meridian")
     void testIsOnPrimeMeridianTrue() {
-        Location location =new Location(
+        Location location = new Location(
                 "Greenwich", 51.284, 0.0);
         assertTrue(location.isOnPrimeMeridian());
     }
@@ -68,28 +69,53 @@ class LocationITest {
     @Test
     @DisplayName("RETURN: Name's Latitude is NOT on Greenwich meridian")
     void testIsOnPrimeMeridianFalse() {
-        Location location =new Location(
+        Location location = new Location(
                 testName, testLat, testLon);
         assertFalse(location.isOnPrimeMeridian());
     }
 
     @Test
-    @DisplayName("OBJECT: Different instance check")
+    @DisplayName("OBJECT: Different instance-check")
     void testLocationParserDifferentInstance() {
         LocationParser otherLocationParser = new LocationParser();
         assertNotEquals(locationParser, otherLocationParser);
-        assertNotSame(locationParser,otherLocationParser);
+        assertNotSame(locationParser, otherLocationParser);
     }
 
     @Test
-    @DisplayName("METHOD: Distance result check")
-    void testDistanceResult() {
+    @DisplayName("VALUE: Distance different value-check")
+    void testDistanceDifferent() {
         Location location = locationParser.parse(String.format(
-                "%s,%a,%a",testName,testLat,testLon));
+                "%s,%a,%a", testName, testLat, testLon));
         Location otherLocation = locationParser.parse(
                 "Debrecen,47.52997,21.63916");
-        assertEquals(195.2,
-                location.distanceFrom(otherLocation));
+
+        assertEquals(195.2,location.distanceFrom(otherLocation));
     }
+
+    @Test
+    @DisplayName("VALUE: Distance zero value-check")
+    void testDistanceResult() {
+        Location location = locationParser.parse(String.format(
+                "%s,%a,%a", testName, testLat, testLon));
+        Location otherLocation = locationParser.parse(String.format(
+                "%s,%a,%a", testName, testLat, testLon));
+
+        assertEquals(0d,location.distanceFrom(otherLocation));
+    }
+
+    @Test
+    @DisplayName("VALUE: Distance all value-check")
+    void testParseValues() {
+        Location location = locationParser.parse(testString);
+
+        assertAll(
+                () -> assertEquals(testName, location.getName()),
+                () -> assertEquals(testLat, location.getLatitude()),
+                () -> assertEquals(testLon, location.getLongitude())
+        );
+    }
+
+
 
 }

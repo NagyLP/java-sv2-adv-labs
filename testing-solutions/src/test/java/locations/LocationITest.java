@@ -4,6 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.stream.Stream;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LocationITest {
@@ -69,6 +71,25 @@ class LocationITest {
         Location location =new Location(
                 testName, testLat, testLon);
         assertFalse(location.isOnPrimeMeridian());
+    }
+
+    @Test
+    @DisplayName("OBJECT: Different instance check")
+    void testLocationParserDifferentInstance() {
+        LocationParser otherLocationParser = new LocationParser();
+        assertNotEquals(locationParser, otherLocationParser);
+        assertNotSame(locationParser,otherLocationParser);
+    }
+
+    @Test
+    @DisplayName("METHOD: Distance result check")
+    void testDistanceResult() {
+        Location location = locationParser.parse(String.format(
+                "%s,%a,%a",testName,testLat,testLon));
+        Location otherLocation = locationParser.parse(
+                "Debrecen,47.52997,21.63916");
+        assertEquals(195.2,
+                location.distanceFrom(otherLocation));
     }
 
 }

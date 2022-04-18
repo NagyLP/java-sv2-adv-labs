@@ -20,6 +20,19 @@ public class Location {
         return longitude == 0;
     }
 
+    public double distanceFrom(Location otherlocation) {
+        final int EARTH_RAD = 6371;
+        double latDistance = Math.toRadians(otherlocation.getLatitude() - latitude);
+        double lonDistance = Math.toRadians(otherlocation.getLongitude() - longitude);
+        double a = Math.pow(Math.sin(latDistance / 2), 2)
+                + Math.cos(Math.toRadians(latitude))
+                * Math.cos(Math.toRadians(otherlocation.getLatitude()))
+                * Math.pow(Math.sin(lonDistance / 2), 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+
+        return (int) (EARTH_RAD * c * 10) / 10.0;
+    }
+
     public String getName() {
         return name;
     }

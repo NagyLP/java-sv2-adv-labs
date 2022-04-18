@@ -116,6 +116,17 @@ class LocationITest {
         );
     }
 
+    @Test
+    @DisplayName("DifferentLocations: Equals; NotSame")
+    void testDifferentLocations() {
+        Location location = new Location(testName, testLat, testLon);
+        Location otherLocation = new Location(testName, testLat, testLon);
+
+        assertAll(
+                () -> assertEquals(location, otherLocation),
+                () -> assertNotSame(location, otherLocation)
+        );
+    }
 
 
 }

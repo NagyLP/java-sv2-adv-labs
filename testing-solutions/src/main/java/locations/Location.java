@@ -1,5 +1,7 @@
 package locations;
 
+import java.util.Objects;
+
 public class Location {
 
     private String name;
@@ -31,6 +33,19 @@ public class Location {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
         return (int) (EARTH_RAD * c * 10) / 10.0;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Location location = (Location) o;
+        return Double.compare(location.latitude, latitude) == 0 && Double.compare(location.longitude, longitude) == 0 && name.equals(location.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, latitude, longitude);
     }
 
     public String getName() {

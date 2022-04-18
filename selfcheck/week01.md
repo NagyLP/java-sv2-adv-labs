@@ -34,8 +34,8 @@
 * [X] [AssertJ - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464090-assertj-gyakorlat)
 * [ ] AssertJ gyakorlati feladat
 ### Mockito
-* [ ] [Mockito videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464183-mockito)
-* [ ] [Mockito - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464187-mockito-gyakorlat)
+* [X] [Mockito videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464183-mockito)
+* [X] [Mockito - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464187-mockito-gyakorlat)
 * [ ] Mockito gyakorlati feladat
 
 ### Konzultációs gyakorlati feladatok

@@ -9,10 +9,12 @@ public class Location {
     private double longitude;
 
     public Location(String name, double latitude, double longitude) {
+        valuesValidator(latitude, longitude);
         this.name = name;
         this.latitude = latitude;
         this.longitude = longitude;
     }
+
 
     public boolean isOnEquator() {
         return latitude == 0;
@@ -70,5 +72,14 @@ public class Location {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    private void valuesValidator(double latitude, double longitude) {
+        if (latitude < -90 || latitude > 90) {
+            throw new IllegalArgumentException("True Latitude [-90;90]: " + latitude);
+        }
+        if (longitude < -180 || longitude > 180) {
+            throw new IllegalArgumentException("True Longitude [-180;180]: " + longitude);
+        }
     }
 }

@@ -117,7 +117,7 @@ class LocationITest {
     }
 
     @Test
-    @DisplayName("DifferentLocations: Equals; NotSame")
+    @DisplayName("EQUALS-NotSame: Different Location")
     void testDifferentLocations() {
         Location location = new Location(testName, testLat, testLon);
         Location otherLocation = new Location(testName, testLat, testLon);
@@ -128,5 +128,32 @@ class LocationITest {
         );
     }
 
+    @Test
+    @DisplayName("EXEPTION: Latitude is too low.")
+    void testLowLatitude() {
+        Exception testEx = assertThrows(IllegalArgumentException.class, ()-> new Location(
+                "Tatuin", -90.5, 19));
+        assertEquals("True Latitude [-90;90]: -90.5", testEx.getMessage());
+    }
+        @Test
+    @DisplayName("EXEPTION: Latitude is too high.")
+    void testHighLatitude() {
+        Exception testEx = assertThrows(IllegalArgumentException.class, ()-> new Location(
+                "Tatuin", 90.5, 19));
+        assertEquals("True Latitude [-90;90]: 90.5", testEx.getMessage());
+    }
+    @Test
+    @DisplayName("EXEPTION: Longitude is too high.")
+    void testLowLongitude() {
+        Exception testEx = assertThrows(IllegalArgumentException.class, ()-> new Location(
+                "Tatuin", 90, -180.5));
+        assertEquals("True Longitude [-180;180]: -180.5", testEx.getMessage());
+    }  @Test
+    @DisplayName("EXEPTION: Longitude is too high.")
+    void testHighLongitude() {
+        Exception testEx = assertThrows(IllegalArgumentException.class, ()-> new Location(
+                "Tatuin", 90, 180.5));
+        assertEquals("True Longitude [-180;180]: 180.5", testEx.getMessage());
+    }
 
 }

@@ -15,7 +15,7 @@
 * [X] Elnevezések gyakorlati feladat
 * [X] [Assert videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769684-assert)
 * [X] [Assert - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769704-assert-gyakorlat)
-* [ ] Assert gyakorlati feladat
+* [X] Assert gyakorlati feladat
 
 ### Haladó JUnit
 * [X] [Kivételkezelés és timeout tesztelése videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769706-kivetelkezeles-es-timeout-tesztelese)

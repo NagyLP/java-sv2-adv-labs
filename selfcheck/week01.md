@@ -23,7 +23,7 @@
 * [X] Kivételkezelés és timeout tesztelése gyakorlati feladat
 * [X] [Tesztesetek ismétlése videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769719-tesztesetek-ismetlese)
 * [X] [Tesztesetek ismétlése - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769720-tesztesetek-ismetlese-gyakorlat)
-* [ ] Tesztesetek ismétlése gyakorlati feladat
+* [X] Tesztesetek ismétlése gyakorlati feladat
 * [X] [Paraméterezett tesztek videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769721-parameterezett-tesztek)
 * [X] [Paraméterezett tesztek - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/10769722-parameterezett-tesztek-gyakorlat)
 * [ ] Paraméterezett tesztek gyakorlati feladat

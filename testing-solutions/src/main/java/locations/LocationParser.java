@@ -2,7 +2,7 @@ package locations;
 
 public class LocationParser {
 
-    public Location parse(String text) {
+    public static Location parse(String text) {
         String[] textPart = text.split(",");
         return new Location(
                 textPart[0],

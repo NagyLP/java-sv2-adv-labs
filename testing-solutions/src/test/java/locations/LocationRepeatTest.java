@@ -2,7 +2,6 @@ package locations;
 
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
-import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -45,7 +44,7 @@ public class LocationRepeatTest {
     }
 
     @ParameterizedTest(name = "Latitude = {0}, Longitude = {1}, Expected = {2}")
-    @CsvFileSource(resources = "/location.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/locations.csv", numLinesToSkip = 1)
     void testPrimeMeridianFromFile(int latitude, int longitude, boolean expected) {
         Location testLocation = new Location(
                 "TestLoc", latitude, longitude);

@@ -56,8 +56,7 @@ class LocationsReaderTest {
     @Test
     void testSoftAssertion(SoftAssertions softly) {
         Location location = new Location("Abc", 0,0);
-        softly.assertThat(location.getName()).startsWith("A");
-        softly.assertThat(location.getName()).endsWith("c");
-        softly.assertAll();
+        softly.assertThat(location.getName()).as("Name first char").doesNotStartWith("b");
+        softly.assertThat(location.getName()).as("Name last char").doesNotEndWith("b");
     }
 }

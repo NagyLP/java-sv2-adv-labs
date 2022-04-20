@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.tuple;
 
 @ExtendWith(SoftAssertionsExtension.class)
-public class LocationsReaderTest {
+class LocationsReaderTest {
 
     LocationReader locationReader;
 
@@ -56,8 +56,8 @@ public class LocationsReaderTest {
     @Test
     void testSoftAssertion(SoftAssertions softly) {
         Location location = new Location("Abc", 0,0);
-        softly.assertThat(location.getName().startsWith("c"));
-        softly.assertThat(location.getName().endsWith("A"));
+        softly.assertThat(location.getName()).startsWith("A");
+        softly.assertThat(location.getName()).endsWith("c");
         softly.assertAll();
     }
 }

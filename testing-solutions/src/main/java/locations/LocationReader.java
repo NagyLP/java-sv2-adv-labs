@@ -16,4 +16,10 @@ public class LocationReader {
             throw new IllegalStateException("Can't read file", ex);
         }
     }
+
+    public List<Location> filterLocationsBeyondArcticCircle(List<Location> locations) {
+        return locations.stream()
+                .filter(location -> location.getLatitude() > 66.57)
+                .toList();
+    }
 }

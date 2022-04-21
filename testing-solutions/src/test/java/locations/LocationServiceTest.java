@@ -9,14 +9,15 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
-//@ExtendWith(MockitoExtension.class)
+@ExtendWith(MockitoExtension.class)
 class LocationServiceTest {
 
-//    @Mock
-//    LocationsRepository locationsRepository;
+    @Mock
+    LocationsRepository locationsRepository;
 
-//    @InjectMocks
+    @InjectMocks
     LocationService testLocationService;
 
     @Test
@@ -35,6 +36,13 @@ class LocationServiceTest {
 
         assertEquals(Optional.empty(),
                 testLocationService.calculateDistance("Pornóapáti", "Záhony"));
+    }
+
+    @Test
+    void testCalculateDistanceNoFirstCity(){
+        when(locationsRepository
+                .findByName("Abc"))
+                .thenReturn(Optional.empty());
     }
 
 }

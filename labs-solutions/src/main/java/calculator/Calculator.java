@@ -1,6 +1,6 @@
-package calendar;
+package calculator;
 
-public class Calendar {
+public class Calculator {
 
     public int add(int a, int b) {
         return a + b;

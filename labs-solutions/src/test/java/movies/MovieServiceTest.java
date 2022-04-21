@@ -6,7 +6,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import javax.swing.text.html.Option;
 import java.time.LocalDate;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -54,6 +56,13 @@ class MovieServiceTest {
         verify(movieRepository, never()).saveMovie(any());
     }
 
+
+//    @Test
+//    void testFindByTitle(){
+//        when(movieRepository.findByTitle(testTitle)).thenReturn(
+//                Optional.of(new Movie(testId, testTitle, testDate, testLenght))
+//        );
+//    }
 
     private void call() {
         movieService.saveMovie("Cím", LocalDate.of(1900, 12, 31), 121);

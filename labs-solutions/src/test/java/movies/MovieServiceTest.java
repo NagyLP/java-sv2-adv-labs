@@ -43,16 +43,19 @@ class MovieServiceTest {
 
     @Test
     void testSaveMovieWrongDate() {
-        assertThatThrownBy(() -> movieService.saveMovie("Cím", LocalDate.of(1900, 12, 31), 121))
+        assertThatThrownBy(this::call)
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("Date is not correct: 1900-12-31");
 
         assertThatExceptionOfType(IllegalArgumentException.class)
-                .isThrownBy(() -> movieService.saveMovie("Cím", LocalDate.of(1900, 12, 31), 121))
+                .isThrownBy(this::call)
                 .withMessage("Date is not correct: 1900-12-31");
 
         verify(movieRepository, never()).saveMovie(any());
     }
 
 
+    private void call() {
+        movieService.saveMovie("Cím", LocalDate.of(1900, 12, 31), 121);
+    }
 }

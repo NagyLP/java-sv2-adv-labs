@@ -20,4 +20,8 @@ public class LocationService {
         return Optional.of(
                 oneLocation.get().distanceFrom(oneLocation.get()));
     }
+
+    public boolean isOnNorthernHemisphere(String budapest) {
+        return false;
+    }
 }

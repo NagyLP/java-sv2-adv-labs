@@ -92,8 +92,6 @@ class LocationServiceTest {
 
         assertEquals(Optional.of(0.0),
                 testLocationService.calculateDistance("Sári", "Sári"));
-//        verify(locationsRepository, only())
-//                .findByName(argThat(l -> l.equals("Sári")));
         verify(locationsRepository, never())
                 .findByName(argThat(l -> l.equals("Bugyi")));
         verify(locationsRepository, times(2) )
@@ -112,9 +110,31 @@ class LocationServiceTest {
                 .thenReturn(Optional.of(new Location("Bugyi", 47.226, 19.1516 ))
                 );
 
-        assertEquals(0.0,testLocationService.calculateDistance("Sári", "Bugyi").get());
+        assertFalse(testLocationService.calculateDistance("Sári", "Bugyi").isPresent());
+        assertEquals(0.0,
+                testLocationService.calculateDistance("Sári", "Bugyi").get());
 
     }
+    @Test
+    void testIsOnNorthernHemisphereTrue() {
+        when(locationsRepository.findLatitudeByName(any()))
+                .thenReturn(Optional.of(42d));
+        assertTrue(testLocationService.isOnNorthernHemisphere("Budapest"));
+    }
 
+    @Test
+    void testIsOnNorthernHemisphereFalse() {
+        when(locationsRepository.findLatitudeByName(any()))
+                .thenReturn(Optional.of(-42d));
+        assertFalse(testLocationService.isOnNorthernHemisphere("Budapest"));
+    }
+
+    @Test
+    void testIsOnNorthernHemisphereException() {
+        when(locationsRepository.findLatitudeByName(any()))
+                .thenReturn(Optional.empty());
+        assertThrows(IllegalArgumentException.class, () -> testLocationService.isOnNorthernHemisphere("Budapest"));
+        verify(locationsRepository).findLatitudeByName("Budapest");
+    }
 
 }

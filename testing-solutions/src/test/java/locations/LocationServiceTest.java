@@ -9,10 +9,15 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.argThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class LocationServiceTest {
+
+    Location testLocation = new Location(
+            "Sári", 47.1150, 19.1528);
 
     @Mock
     LocationsRepository locationsRepository;
@@ -27,6 +32,7 @@ class LocationServiceTest {
             public Optional<Location> findByName(String name) {
                 return Optional.empty();
             }
+
             @Override
             public Optional<Double> findLatitudeByName(String name) {
                 return Optional.empty();
@@ -39,10 +45,24 @@ class LocationServiceTest {
     }
 
     @Test
-    void testCalculateDistanceNoFirstCity(){
+    void testCalculateDistanceNoFirstCity() {
         when(locationsRepository
-                .findByName("Abc"))
-                .thenReturn(Optional.empty());
+                .findByName("Bugyi"))
+                .thenReturn(Optional.empty()
+        );
+
+        when(locationsRepository
+                .findByName("Sári"))
+                .thenReturn(Optional.of(testLocation)
+        );
+
+        assertEquals(Optional.empty(),
+                testLocationService.calculateDistance("Sári", "Bugyi"));
+        verify(locationsRepository)
+                .findByName(argThat(l->l.equals("Bugyi")));
+        verify(locationsRepository)
+                .findByName(argThat(l->l.equals("Sári")));
     }
+
 
 }

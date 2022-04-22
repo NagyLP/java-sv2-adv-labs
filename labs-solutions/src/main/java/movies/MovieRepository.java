@@ -34,4 +34,13 @@ public class MovieRepository {
         return new Movie(keyHolder.getKey().longValue(),movie.getTitle(),movie.getReleaseDate(),movie.getLength());
     }
 
+    public Optional<Movie> findByTitle(String title){
+        Movie found = jdbcTemplate.queryForObject("select * from movies where title = ?",
+                (rs, rowNum)->new Movie(rs.getLong("id"),rs.getString("title"),rs.getDate("date_of_relase").toLocalDate(),rs.getInt("length")),
+                title);
+
+        return Optional.of(found);
+    }
+
+
 }

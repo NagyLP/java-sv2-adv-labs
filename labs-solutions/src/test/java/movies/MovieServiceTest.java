@@ -57,12 +57,13 @@ class MovieServiceTest {
     }
 
 
-//    @Test
-//    void testFindByTitle(){
-//        when(movieRepository.findByTitle(testTitle)).thenReturn(
-//                Optional.of(new Movie(testId, testTitle, testDate, testLenght))
-//        );
-//    }
+    @Test
+    void testFindByTitle(){
+        when(movieRepository.findByTitle(testTitle)).thenReturn(
+                Optional.of(new Movie(testId, testTitle, testDate, testLenght))
+        );
+        assertThat(movieRepository.findByTitle(testTitle)).isEqualTo(testTitle);
+    }
 
     private void call() {
         movieService.saveMovie("Cím", LocalDate.of(1900, 12, 31), 121);

@@ -10,8 +10,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.argThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class LocationServiceTest {
@@ -45,23 +44,76 @@ class LocationServiceTest {
     }
 
     @Test
-    void testCalculateDistanceNoFirstCity() {
+    void testCalculateDistanceNoFullfilledFirstLocation() {
         when(locationsRepository
                 .findByName("Bugyi"))
                 .thenReturn(Optional.empty()
-        );
+                );
 
         when(locationsRepository
                 .findByName("Sári"))
                 .thenReturn(Optional.of(testLocation)
-        );
+                );
 
         assertEquals(Optional.empty(),
                 testLocationService.calculateDistance("Sári", "Bugyi"));
         verify(locationsRepository)
-                .findByName(argThat(l->l.equals("Bugyi")));
+                .findByName(argThat(l -> l.equals("Bugyi")));
         verify(locationsRepository)
-                .findByName(argThat(l->l.equals("Sári")));
+                .findByName(argThat(l -> l.equals("Sári")));
+    }
+
+    @Test
+    void testCalculateDistanceNoFullfilledSecondLocation() {
+        when(locationsRepository
+                .findByName("Sári"))
+                .thenReturn(Optional.of(testLocation)
+                );
+
+        when(locationsRepository
+                .findByName("Bugyi"))
+                .thenReturn(Optional.empty()
+                );
+
+        assertEquals(Optional.empty(),
+                testLocationService.calculateDistance("Sári", "Bugyi"));
+        verify(locationsRepository)
+                .findByName(argThat(l -> l.equals("Bugyi")));
+        verify(locationsRepository)
+                .findByName(argThat(l -> l.equals("Sári")));
+    }
+
+    @Test
+    void testCalculateDistanceEqualsLocation() {
+        when(locationsRepository
+                .findByName("Sári"))
+                .thenReturn(Optional.of(testLocation)
+                );
+
+        assertEquals(Optional.of(0.0),
+                testLocationService.calculateDistance("Sári", "Sári"));
+//        verify(locationsRepository, only())
+//                .findByName(argThat(l -> l.equals("Sári")));
+        verify(locationsRepository, never())
+                .findByName(argThat(l -> l.equals("Bugyi")));
+        verify(locationsRepository, times(2) )
+                .findByName(argThat(l -> l.equals("Sári")));
+    }
+
+    @Test
+    void testCalculateDistanceDatasOK() {
+        when(locationsRepository
+                .findByName("Sári"))
+                .thenReturn(Optional.of(testLocation)
+                );
+
+        when(locationsRepository
+                .findByName("Bugyi"))
+                .thenReturn(Optional.of(new Location("Bugyi", 47.226, 19.1516 ))
+                );
+
+        assertEquals(200.0d,testLocationService.calculateDistance("Sári", "Bugyi").get());
+
     }
 
 

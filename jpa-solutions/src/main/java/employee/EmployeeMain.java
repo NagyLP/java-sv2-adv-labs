@@ -14,8 +14,8 @@ public class EmployeeMain {
         main.manager.getTransaction().begin();
 
         main.manager.persist(new Employee("John Doe"));
-
         main.manager.getTransaction().commit();
+
         main.entityModulClose();
 
     }

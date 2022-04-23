@@ -11,7 +11,7 @@
 * [X] [További egyszerű műveletek JPA-val](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/25790948-tovabbi-egyszeru-muveletek-jpa-val)
 * [X] [További egyszerű műveletek JPA-val - gyakorlat](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/25790964-tovabbi-egyszeru-muveletek-jpa-val-gyakorlat)
 * [X] További egyszerű műveletek JPA-val gyakorlati feladat
-* [ ] [Architektúra és integrációs tesztelés](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769290-architektura-es-integracios-teszteles)
+* [X] [Architektúra és integrációs tesztelés](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769290-architektura-es-integracios-teszteles)
 * [ ] Architektúra és integrációs tesztelés gyakorlati feladat
 * [ ] [Entitások konfigurálása](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769291-entitasok-konfiguralasa)
 * [ ] Entitások konfigurálása gyakorlati feladat

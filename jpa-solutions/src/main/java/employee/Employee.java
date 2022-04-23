@@ -2,8 +2,8 @@ package employee;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "employees")
+//@Entity
+//@Table(name = "employees")
 
 public class Employee {
 
@@ -19,4 +19,5 @@ public class Employee {
     public Employee(String name) {
         this.name = name;
     }
+
 }

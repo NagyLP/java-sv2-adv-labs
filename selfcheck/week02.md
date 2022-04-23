@@ -7,7 +7,7 @@
 
 * [X] [Egyszerű mentés JPA-val videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/25790918-egyszeru-mentes-jpa-val)
 * [X] [Egyszerű mentés JPA-val-gyakorlat](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/25790939-egyszeru-mentes-jpa-val-gyakorlat)
-* [ ] Egyszerű mentés JPA-val gyakorlati feladat
+* [X] Egyszerű mentés JPA-val gyakorlati feladat
 * [ ] [További egyszerű műveletek JPA-val](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/25790948-tovabbi-egyszeru-muveletek-jpa-val)
 * [ ] [További egyszerű műveletek JPA-val - gyakorlat](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/25790964-tovabbi-egyszeru-muveletek-jpa-val-gyakorlat)
 * [ ] További egyszerű műveletek JPA-val gyakorlati feladat

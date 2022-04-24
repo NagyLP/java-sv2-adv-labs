@@ -13,10 +13,14 @@ public class ActivityTrackerMain {
 
     public static void main(String[] args) {
         ActivityTrackerMain main = new ActivityTrackerMain();
-        Activity oneActivity = new Activity(LocalDateTime.of(2022, 4, 20, 23, 0), "Running", ActivityType.RUNNING);
-        Activity twoActivity = new Activity(LocalDateTime.of(2022, 4, 21, 19, 0), "Biking", ActivityType.BIKING);
-        Activity threeActivity = new Activity(LocalDateTime.of(2022, 4, 23, 20, 0), "Hiking", ActivityType.HIKING);
-        Activity fourActivity = new Activity(LocalDateTime.of(2022, 4, 24, 0, 0), "Deleting", ActivityType.HIKING);
+        Activity oneActivity = new Activity(LocalDateTime.of(2022, 4, 20, 23, 0),
+                "Running", ActivityType.RUNNING);
+        Activity twoActivity = new Activity(LocalDateTime.of(2022, 4, 21, 19, 0),
+                "Biking", ActivityType.BIKING);
+        Activity threeActivity = new Activity(LocalDateTime.of(2022, 4, 23, 20, 0),
+                "Hiking", ActivityType.HIKING);
+        Activity fourActivity = new Activity(LocalDateTime.of(2022, 4, 24, 0, 0),
+                "Deleting", ActivityType.HIKING);
         List<Activity> activities = new LinkedList<>();
         activities.add(oneActivity);
         activities.add(twoActivity);

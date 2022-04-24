@@ -6,38 +6,46 @@ import java.util.List;
 
 public class ActivityDao {
 
-    private final EntityManagerFactory factory;
-    private final EntityManager manager;
+    private EntityManagerFactory factory;
+    private EntityManager manager;
 
     public ActivityDao(EntityManagerFactory factory) {
         this.factory = factory;
-        this.manager = factory.createEntityManager();
     }
 
     public void saveActivity(Activity activity) {
+        manager = factory.createEntityManager();
         manager.getTransaction().begin();
         manager.persist(activity);
         manager.getTransaction().commit();
-        entityModulClose();
+        manager.close();
     }
 
     public List<Activity> listActivities() {
-        return manager
-                .createQuery("select a from Activity a", Activity.class)
-                .getResultList();
+        manager = factory.createEntityManager();
+        try {
+            return manager
+                    .createQuery("select a from Activity a", Activity.class)
+                    .getResultList();
+        } finally {
+            manager.close();
+        }
     }
 
     public Activity findActivityById(long id) {
-        return manager.find(Activity.class, id);
+        manager = factory.createEntityManager();
+        try {
+            return manager.find(Activity.class, id);
+        } finally {
+            manager.close();
+        }
     }
 
     public void deleteActivity(long id) {
+        manager = factory.createEntityManager();
         manager.getTransaction().begin();
         manager.remove(manager.getReference(Activity.class, id));
-    }
-
-    private void entityModulClose() {
+        manager.getTransaction().commit();
         manager.close();
-        factory.close();
     }
 }

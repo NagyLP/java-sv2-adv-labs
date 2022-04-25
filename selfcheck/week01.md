@@ -36,7 +36,7 @@
 ### Mockito
 * [X] [Mockito videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464183-mockito)
 * [X] [Mockito - gyakorlat videó](https://e-learning.training360.com/courses/take/szoftverteszteles-java-platformon-2021/lessons/30464187-mockito-gyakorlat)
-* [ ] Mockito gyakorlati feladat
+* [X] Mockito gyakorlati feladat
 
 ### Konzultációs gyakorlati feladatok
 * [X] Hétfő - Elérések ellenőrzése, git repók létrehozása

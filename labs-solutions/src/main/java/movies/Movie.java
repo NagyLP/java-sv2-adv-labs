@@ -31,6 +31,22 @@ public class Movie {
         this.length = length;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setReleaseDate(LocalDate releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
     public String getTitle() {
         return title;
     }

@@ -13,7 +13,7 @@
 * [X] További egyszerű műveletek JPA-val gyakorlati feladat
 * [X] [Architektúra és integrációs tesztelés](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769290-architektura-es-integracios-teszteles)
 * [X] Architektúra és integrációs tesztelés gyakorlati feladat
-* [ ] [Entitások konfigurálása](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769291-entitasok-konfiguralasa)
+* [X] [Entitások konfigurálása](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769291-entitasok-konfiguralasa)
 * [ ] Entitások konfigurálása gyakorlati feladat
 * [ ] [Elsődleges kulcs](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769292-elsodleges-kulcs)
 * [ ] Elsődleges kulcs gyakorlati feladat

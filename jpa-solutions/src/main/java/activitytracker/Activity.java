@@ -46,7 +46,7 @@ public class Activity {
         return createdAt;
     }
 
-    @PostLoad
+    @PostUpdate
     public void setUpdatedAt() {
         this.updatedAt = LocalDateTime.now();
     }

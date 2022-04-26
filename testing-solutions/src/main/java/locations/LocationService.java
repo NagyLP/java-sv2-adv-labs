@@ -18,10 +18,14 @@ public class LocationService {
             return Optional.empty();
         }
         return Optional.of(
-                oneLocation.get().distanceFrom(oneLocation.get()));
+                oneLocation.get().distanceFrom(otherLocation.get()));
     }
 
-    public boolean isOnNorthernHemisphere(String budapest) {
-        return false;
+    public boolean isOnNorthernHemisphere(String name) {
+        return locationsRepository.findLatitudeByName(name)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid Location"))
+                > 0;
+
+
     }
 }

@@ -110,8 +110,8 @@ class LocationServiceTest {
                 .thenReturn(Optional.of(new Location("Bugyi", 47.226, 19.1516 ))
                 );
 
-        assertFalse(testLocationService.calculateDistance("Sári", "Bugyi").isPresent());
-        assertEquals(0.0,
+        assertTrue(testLocationService.calculateDistance("Sári", "Bugyi").isPresent());
+        assertEquals(12.3,
                 testLocationService.calculateDistance("Sári", "Bugyi").get());
 
     }

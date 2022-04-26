@@ -17,8 +17,8 @@
 * [X] Entitások konfigurálása gyakorlati feladat
 * [X] [Elsődleges kulcs](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769292-elsodleges-kulcs)
 * [X] Elsődleges kulcs gyakorlati feladat
-* [ ] [Entitások életciklusa](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769293-entitasok-eletciklusa)
-* [ ] Entitások életciklusa gyakorlati feladat
+* [X] [Entitások életciklusa](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769293-entitasok-eletciklusa)
+* [X] Entitások életciklusa gyakorlati feladat
 * [ ] [Többértékű attribútumok](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769294-tobberteku-attributumok)
 * [ ] Többértékű attribútumok gyakorlati feladat
 

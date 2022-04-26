@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ActivityDao {
 
-    private EntityManagerFactory factory;
+    private final EntityManagerFactory factory;
     private EntityManager manager;
 
     public ActivityDao(EntityManagerFactory factory) {
@@ -43,9 +43,24 @@ public class ActivityDao {
 
     public void deleteActivity(long id) {
         manager = factory.createEntityManager();
-        manager.getTransaction().begin();
-        manager.remove(manager.getReference(Activity.class, id));
-        manager.getTransaction().commit();
-        manager.close();
+        try {
+            manager.getTransaction().begin();
+            manager.remove(manager.getReference(Activity.class, id));
+            manager.getTransaction().commit();
+        } finally {
+            manager.close();
+        }
     }
+
+    public void updateActivity(long id, String description) {
+        manager = factory.createEntityManager();
+        try {
+            manager.getTransaction().begin();
+            (manager.find(Activity.class, id)).setDescription(description);
+            manager.getTransaction().commit();
+        } finally {
+            manager.close();
+        }
+    }
+
 }

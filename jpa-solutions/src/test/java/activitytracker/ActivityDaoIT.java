@@ -21,7 +21,7 @@ class ActivityDaoIT {
 
     @BeforeEach
     void setUp() {
-        activityDao = new ActivityDao(Persistence.createEntityManagerFactory("pu"));
+        activityDao = new ActivityDao(Persistence.createEntityManagerFactory("TEST-pu"));
         testOneActivity = new Activity(LocalDateTime.of(2022, 4, 24, 23, 0),
                 "NightFlow", ActivityType.RUNNING);
     }
@@ -61,11 +61,25 @@ class ActivityDaoIT {
     }
 
     @Test
-    void deleteActivity() {
+    void testDeleteActivity() {
         activityDao.saveActivity(testOneActivity);
         activityDao.deleteActivity(testOneActivity.getId());
 
         assertThat(activityDao.listActivities())
-                .hasSize(0);
+                .isEmpty();
+    }
+
+
+    @Test
+    void testUpdateActivity() {
+        activityDao.saveActivity(testOneActivity);
+        assertThat(activityDao.listActivities())
+                .hasSize(1);
+
+        activityDao.updateActivity(testOneActivity.getId(),
+                "(Norbi) UPDATED");
+
+        assertEquals("(Norbi) UPDATED",
+                activityDao.findActivityById(testOneActivity.getId()).getDescription());
     }
 }

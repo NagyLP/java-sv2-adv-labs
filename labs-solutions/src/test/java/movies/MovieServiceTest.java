@@ -6,7 +6,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import javax.swing.text.html.Option;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -62,7 +61,8 @@ class MovieServiceTest {
         when(movieRepository.findByTitle(testTitle)).thenReturn(
                 Optional.of(new Movie(testId, testTitle, testDate, testLenght))
         );
-        assertThat(movieRepository.findByTitle(testTitle)).isEqualTo(testTitle);
+        assertThat(movieRepository.findByTitle(testTitle)
+                .orElseThrow().getTitle()).isEqualTo(testTitle);
     }
 
     private void call() {

@@ -31,7 +31,7 @@ class MovieRepositoryTest {
     void testSaveMovie() {
         Movie movie = repository.saveMovie(testMovie);
 
-        assertThat(movie.getId()).isNotEqualTo(null);
+        assertThat(movie.getId()).isNotNull();
     }
 
 

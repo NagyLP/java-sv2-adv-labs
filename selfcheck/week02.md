@@ -24,7 +24,7 @@
 
 ### Konzultációs gyakorlati feladatok
 
-Amennyiben a konzultáción nincs konkrét kiadott gyakorlati feladat, akkor innentől kezdve a
+Amennyiben a konzultáción nincs konkrét kiadott gyakorlati feladat, akkor innentől kezdve a 
 konzultáción folyamán beírt kódokat fogjuk kérni.
 
 * [X] Kedd - Gyakorlati feladat

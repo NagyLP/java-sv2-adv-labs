@@ -34,9 +34,27 @@ class MovieRepositoryTest {
         assertThat(movie.getId()).isNotNull();
     }
 
+    @Test
+    void testFindByTitle() {
 
+    }
 
-//    @BeforeEach
+    @Test
+    void testFindByTitleWithRatings() {
+        testMovie.addRating(new Rating(6.7, "user1"));
+        testMovie.addRating(new Rating(6.9, "user2"));
+        repository.saveMovie(testMovie);
+        Movie testResult = repository.findMovieByTitleWithRatings("Titanic");
+        System.out.println(testResult.getRatings());
+        assertThat(testResult.getLength()).isEqualTo(194);
+    }
+
+    @Test
+    void findRatingsByUsername() {
+
+    }
+
+    //    @BeforeEach
 //    void init() {
 //        JdbcDataSource dataSource = new JdbcDataSource();
 //

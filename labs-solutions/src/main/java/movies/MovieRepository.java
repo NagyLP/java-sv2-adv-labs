@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.List;
 import java.util.Optional;
 
 public class MovieRepository {
@@ -38,6 +39,23 @@ public class MovieRepository {
         manager.close();
         return Optional.of(foundMovie);
     }
+
+    public Movie findMovieByTitleWithRatings(String title){
+        EntityManager manager = factory.createEntityManager();
+        Movie foundMovie = manager.createQuery(
+                        "select m from Movie m" +
+                            " join fetch m.ratings" +
+                            " where m.title = :title", Movie.class)
+                .setParameter("title", title)
+                .getSingleResult();
+        manager.close();
+        return foundMovie;
+    }
+
+//    public List<Rating> findRaingsByUsername(String username){
+//        EntityManager manager = factory.createEntityManager();;
+//        List<Rating> result = manager.createQuery("select r from Rating r where r.username=:username", Rating.class)
+//    }
 
 //    private JdbcTemplate jdbcTemplate;
 //

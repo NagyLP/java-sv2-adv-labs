@@ -2,6 +2,9 @@ package movies;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -14,6 +17,11 @@ public class Movie {
     @Column(name = "dat_of_release")
     private LocalDate releaseDate;
     private int length;
+
+    @ElementCollection
+    @CollectionTable(name = "ratings", joinColumns = @JoinColumn(name = "movie_id"))
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Rating> ratings = new LinkedList<>();
 
     public Movie() {
     }
@@ -29,6 +37,10 @@ public class Movie {
         this.title = title;
         this.releaseDate = releaseDate;
         this.length = length;
+    }
+
+    public void addRating(Rating rating) {
+        ratings.add(rating);
     }
 
     public void setId(Long id) {
@@ -63,9 +75,17 @@ public class Movie {
         return id;
     }
 
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
+
     @Override
     public String toString() {
-        return "Movie{" +
+        return "\nMovie{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", releaseDate=" + releaseDate +

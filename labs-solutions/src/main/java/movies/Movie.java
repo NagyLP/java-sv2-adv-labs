@@ -1,13 +1,22 @@
 package movies;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "movies")
 public class Movie {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
+    @Column(name = "dat_of_release")
     private LocalDate releaseDate;
     private int length;
+
+    public Movie() {
+    }
 
     public Movie(String title, LocalDate releaseDate, int length) {
         this.title = title;
@@ -30,12 +39,21 @@ public class Movie {
         return releaseDate;
     }
 
-
     public int getLength() {
         return length;
     }
 
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", length=" + length +
+                '}';
     }
 }

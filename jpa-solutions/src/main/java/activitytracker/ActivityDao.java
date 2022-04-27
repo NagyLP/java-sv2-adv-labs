@@ -70,6 +70,8 @@ public class ActivityDao {
         try {
             return manager
                     .createQuery("select a from Activity a join fetch a.labels where id = :id", Activity.class)
+//  "select distinct a from Employee a left join fetch a.labels where id = :id"
+// Ha nincs adott értéke akkor is visszaadja, ill., ha több érték van egyszer adja vissza.
                     .setParameter("id", id)
                     .getSingleResult();
         } finally {

@@ -86,7 +86,7 @@
             <version>5.3.19</version>
         </dependency>
 
-        <!--       Flyway naplózás: FEKETE színben (logback.xml-t ne feledd a resources-be  -->
+        <!--       Flyway naplózás: FEKETE színben (logback.xml-t ne feledd a resources-ba  -->
 <!--        <dependency>-->
 <!--            <groupId>ch.qos.logback</groupId>-->
 <!--            <artifactId>logback-classic</artifactId>-->

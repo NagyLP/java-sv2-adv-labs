@@ -2,6 +2,8 @@ package activitytracker;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -27,6 +29,11 @@ public class Activity {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
+    @ElementCollection
+    List<String> labels;
+
+    public Activity() {
+    }
 
     public Activity(LocalDateTime startTime, String description, ActivityType type) {
         this.startTime = startTime;
@@ -34,8 +41,6 @@ public class Activity {
         this.type = type;
     }
 
-    public Activity() {
-    }
 
     @PrePersist
     public void setCreatedAt() {
@@ -55,36 +60,44 @@ public class Activity {
         return updatedAt;
     }
 
-    public long getId() {
-        return id;
-    }
-
     public void setId(long id) {
         this.id = id;
-    }
-
-    public LocalDateTime getStartTime() {
-        return startTime;
     }
 
     public void setStartTime(LocalDateTime startTime) {
         this.startTime = startTime;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setType(ActivityType type) {
+        this.type = type;
+    }
+
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public ActivityType getType() {
         return type;
     }
 
-    public void setType(ActivityType type) {
-        this.type = type;
+    public List<String> getLabels() {
+        return labels;
     }
 
     @Override

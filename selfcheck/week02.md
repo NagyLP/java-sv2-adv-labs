@@ -20,7 +20,7 @@
 * [X] [Entitások életciklusa](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769293-entitasok-eletciklusa)
 * [X] Entitások életciklusa gyakorlati feladat
 * [X] [Többértékű attribútumok](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769294-tobberteku-attributumok)
-* [ ] Többértékű attribútumok gyakorlati feladat
+* [X] Többértékű attribútumok gyakorlati feladat
 
 ### Konzultációs gyakorlati feladatok
 

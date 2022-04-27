@@ -45,7 +45,8 @@ public class ActivityDao {
         manager = factory.createEntityManager();
         try {
             manager.getTransaction().begin();
-            manager.remove(manager.getReference(Activity.class, id));
+            manager.remove(manager
+                    .getReference(Activity.class, id));
             manager.getTransaction().commit();
         } finally {
             manager.close();
@@ -56,8 +57,21 @@ public class ActivityDao {
         manager = factory.createEntityManager();
         try {
             manager.getTransaction().begin();
-            (manager.find(Activity.class, id)).setDescription(description);
+            (manager.find(Activity.class, id))
+                    .setDescription(description);
             manager.getTransaction().commit();
+        } finally {
+            manager.close();
+        }
+    }
+
+    public Activity findActivityByIdWithLabels(long id) {
+        manager = factory.createEntityManager();
+        try {
+            return manager
+                    .createQuery("select a from Activity a join fetch a.labels where id = :id", Activity.class)
+                    .setParameter("id", id)
+                    .getSingleResult();
         } finally {
             manager.close();
         }

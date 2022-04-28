@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,7 +28,8 @@ class ActivityDaoIT {
 
     @BeforeEach
     void setUp() {
-        activityDao = new ActivityDao(Persistence.createEntityManagerFactory("TEST-pu"));
+        activityDao = new ActivityDao(Persistence.createEntityManagerFactory(
+                "TEST-pu"));
         testOneActivity = new Activity(LocalDateTime.of(2022, 4, 24, 23, 0),
                 "NightFlow", ActivityType.RUNNING);
     }
@@ -100,5 +102,27 @@ class ActivityDaoIT {
                 .containsOnly("Cardio", "Country");
         assertEquals(List.of("Cardio", "Country"),
                 testOneActivity.getLabels());
+    }
+
+    @Test
+    void findActivityByIdWithTrackPoints() {
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022,1,1),
+                1.0,2.0));
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022,1,2),2.0,3.0));
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022,1,3),
+                3.0,4.0));
+        activityDao.saveActivity(testOneActivity);
+        Activity acivityFromDao = activityDao.findActivityByIdWithTrackPoints(
+                testOneActivity.getId());
+
+        assertThat(acivityFromDao.getTrackPoints())
+                .isNotNull()
+                .hasSize(3);
+        assertEquals(LocalDate.of(2022,1,1), acivityFromDao
+                .getTrackPoints().get(0).getTime());
+        assertEquals(1.0, acivityFromDao
+                .getTrackPoints().get(0).getLatitude());
+        assertEquals(4.0, acivityFromDao
+                .getTrackPoints().get(2).getLongitude());
     }
 }

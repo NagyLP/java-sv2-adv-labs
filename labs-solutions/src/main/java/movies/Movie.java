@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "movies")
@@ -12,7 +13,7 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String title;
     @Column(name = "dat_of_release")
     private LocalDate releaseDate;
@@ -33,7 +34,7 @@ public class Movie {
     }
 
     public Movie(Long id, String title, LocalDate releaseDate, int length) {
-        this.id = id;
+        this.id = UUID.randomUUID().toString();
         this.title = title;
         this.releaseDate = releaseDate;
         this.length = length;
@@ -44,7 +45,7 @@ public class Movie {
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id = id.toString();
     }
 
     public void setTitle(String title) {
@@ -71,7 +72,7 @@ public class Movie {
         return length;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 

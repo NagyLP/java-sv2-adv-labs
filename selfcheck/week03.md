@@ -4,8 +4,8 @@
 
 ### JPA Második rész
 
-* [ ] [Kapcsolatok videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769295-kapcsolatok)
-* [ ] Kapcsolatok gyakorlati feladat
+* [X] [Kapcsolatok videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769295-kapcsolatok)
+* [X] Kapcsolatok gyakorlati feladat
 * [ ] [Több-több kapcsolat videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769296-tobb-tobb-kapcsolat)
 * [ ] Több-több kapcsolat gyakorlati feladat
 * [ ] [Entitások Mapekben videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769297-entitasok-mapekben)
@@ -25,3 +25,4 @@ megfeleltethető több napi feladatnak, akkor innentől kezdve a konzultáción 
 * [X] 04.26. kedd - Gyakorlati feladat
 * [ ] 04.28. csütörtök - Gyakorlati feladat
 * [ ] 04.29. péntek - Gyakorlati feladat
+ 

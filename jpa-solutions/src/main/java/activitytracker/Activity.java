@@ -3,6 +3,7 @@ package activitytracker;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -13,7 +14,8 @@ public class Activity {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @GeneratedValue(generator = "Act_Gen")
-    @TableGenerator(name = "Act_Gen", table = "act_id_gen", pkColumnName = "id_gen", valueColumnName = "id_val")
+    @TableGenerator(name = "Act_Gen", table = "act_id_gen",
+            pkColumnName = "id_gen", valueColumnName = "id_val")
     private long id;
 
     @Column(name = "start_time", nullable = false)
@@ -30,7 +32,11 @@ public class Activity {
     private LocalDateTime updatedAt;
 
     @ElementCollection
-    List<String> labels;
+    private List<String> labels;
+
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "activity")
+    @OrderBy("time")
+    private List<TrackPoint> trackPoints = new LinkedList<>();
 
     public Activity() {
     }
@@ -41,24 +47,6 @@ public class Activity {
         this.type = type;
     }
 
-
-    @PrePersist
-    public void setCreatedAt() {
-        this.createdAt = LocalDateTime.now();
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    @PostUpdate
-    public void setUpdatedAt() {
-        this.updatedAt = LocalDateTime.now();
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
 
     public void setId(long id) {
         this.id = id;
@@ -76,8 +64,27 @@ public class Activity {
         this.type = type;
     }
 
+    @PrePersist
+    public void setCreatedAt() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PostUpdate
+    public void setUpdatedAt() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
     public void setLabels(List<String> labels) {
         this.labels = labels;
+    }
+
+    public void addTrackpoint(TrackPoint trackPoint) {
+        trackPoints.add(trackPoint);
+        trackPoint.setActivity(this);
+    }
+
+    public void setTrackPoints(List<TrackPoint> trackPoints) {
+        this.trackPoints = trackPoints;
     }
 
     public long getId() {
@@ -96,8 +103,20 @@ public class Activity {
         return type;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
     public List<String> getLabels() {
         return labels;
+    }
+
+    public List<TrackPoint> getTrackPoints() {
+        return trackPoints;
     }
 
     @Override

@@ -38,6 +38,10 @@ public class Activity {
     @OrderBy("time")
     private List<TrackPoint> trackPoints = new LinkedList<>();
 
+    @ManyToMany(mappedBy = "activities")
+    private List<Area> areas = new ArrayList<>();
+
+
     public Activity() {
     }
 
@@ -47,6 +51,11 @@ public class Activity {
         this.type = type;
     }
 
+
+    public void addTrackpoint(TrackPoint trackPoint) {
+        trackPoints.add(trackPoint);
+        trackPoint.setActivity(this);
+    }
 
     public void setId(long id) {
         this.id = id;
@@ -59,7 +68,6 @@ public class Activity {
     public void setDescription(String description) {
         this.description = description;
     }
-
     public void setType(ActivityType type) {
         this.type = type;
     }
@@ -78,13 +86,12 @@ public class Activity {
         this.labels = labels;
     }
 
-    public void addTrackpoint(TrackPoint trackPoint) {
-        trackPoints.add(trackPoint);
-        trackPoint.setActivity(this);
-    }
-
     public void setTrackPoints(List<TrackPoint> trackPoints) {
         this.trackPoints = trackPoints;
+    }
+
+    public void setAreas(List<Area> areas) {
+        this.areas = areas;
     }
 
     public long getId() {
@@ -117,6 +124,10 @@ public class Activity {
 
     public List<TrackPoint> getTrackPoints() {
         return trackPoints;
+    }
+
+    public List<Area> getAreas() {
+        return areas;
     }
 
     @Override

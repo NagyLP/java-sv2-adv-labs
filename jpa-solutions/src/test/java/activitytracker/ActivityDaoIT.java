@@ -1,19 +1,12 @@
 package activitytracker;
 
-import org.assertj.core.groups.Tuple;
-import org.assertj.core.internal.bytebuddy.dynamic.scaffold.MethodGraph;
-import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -22,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ActivityDaoIT {
 
-    EntityManagerFactory factory;
     ActivityDao activityDao;
     Activity testOneActivity;
 

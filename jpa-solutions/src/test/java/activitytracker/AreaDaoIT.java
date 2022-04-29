@@ -26,7 +26,7 @@ class AreaDaoIT {
     }
 
     @Test
-    void saveArea() {
+    void testSaveArea() {
         Activity oneActivity = new Activity(LocalDateTime.of(2022, 4, 29, 2, 45), "MindRunning", ActivityType.RUNNING);
         Activity twoActivity = new Activity(LocalDateTime.of(2022, 5, 29, 2, 45), "Hiking", ActivityType.HIKING);
         Activity threeActivity = new Activity(LocalDateTime.of(2023, 4, 29, 2, 45), "Biking", ActivityType.BIKING);
@@ -58,6 +58,20 @@ class AreaDaoIT {
     }
 
     @Test
-    void findAreaByName() {
+    void testCitysSaveAndFind() {
+        Area testArea = new Area("Nyirkai-Hany");
+        testArea.putCity(new City("Bősárkány", 2046));
+        testArea.putCity(new City("Rábcakapi", 181));
+        testArea.putCity(new City("Osli", 911));
+
+        areaDao.saveArea(testArea);
+
+        Area areaFromDao = areaDao.findAreaById(testArea.getId());
+
+        assertThat(areaFromDao.getCitys())
+                .isNotNull()
+                .hasSize(3)
+                .isEqualTo("");
+
     }
 }

@@ -1,8 +1,10 @@
 package activitytracker;
 
 import javax.persistence.*;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Area {
@@ -16,6 +18,9 @@ public class Area {
     @ManyToMany
     private List<Activity> activities = new LinkedList<>();
 
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "area")
+    private Map<String, City> citys = new HashMap<>();
+
     public Area() {
     }
 
@@ -23,9 +28,14 @@ public class Area {
         this.name = name;
     }
 
-    public void addActivity(Activity activity){
+    public void addActivity(Activity activity) {
         activities.add(activity);
         activity.getAreas().add(this);
+    }
+
+    public void putCity(City city) {
+        citys.put(city.getName(), city);
+        city.setArea(this);
     }
 
     public Long getId() {
@@ -50,6 +60,14 @@ public class Area {
 
     public void setActivities(List<Activity> activities) {
         this.activities = activities;
+    }
+
+    public Map<String, City> getCitys() {
+        return citys;
+    }
+
+    public void setCitys(Map<String, City> citys) {
+        this.citys = citys;
     }
 
     @Override

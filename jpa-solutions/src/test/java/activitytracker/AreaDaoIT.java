@@ -62,13 +62,12 @@ class AreaDaoIT {
 
     @Test
     void testCitysSaveAndFind() {
-        Area testArea = new Area("Nyirkai-Hany");
+        Area testArea = new Area("Hanság");
         testArea.putCity(new City("Bősárkány", 2046));
         testArea.putCity(new City("Rábcakapi", 181));
         testArea.putCity(new City("Osli", 911));
 
         areaDao.saveArea(testArea);
-
         Area areaFromDao = areaDao.findAreaById(testArea.getId());
 
         assertThat(areaFromDao.getCities())
@@ -81,11 +80,11 @@ class AreaDaoIT {
                         tuple("Rábcakapi", 181),
                         tuple("Osli", 911));
 
-        assertThat(areaFromDao.getCities().values())
-                .extracting(City::getName, City::getPopulation)
-                .containsOnly(tuple("Bősárkány", 2046),
-                        tuple("Rábcakapi", 181),
-                        tuple("Osli", 911));
+//        assertThat(areaFromDao.getCities().values())
+//                .extracting(City::getName, City::getPopulation)
+//                .containsOnly(tuple("Bősárkány", 2046),
+//                        tuple("Rábcakapi", 181),
+//                        tuple("Osli", 911));
     }
 
     private String extractCityName(Map.Entry<String, City> entry) {

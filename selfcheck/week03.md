@@ -24,5 +24,5 @@ megfeleltethető több napi feladatnak, akkor innentől kezdve a konzultáción 
 * [X] 04.25. hétfő - Gyakorlati feladat
 * [X] 04.26. kedd - Gyakorlati feladat
 * [X] 04.28. csütörtök - Gyakorlati feladat
-* [ ] 04.29. péntek - Gyakorlati feladat
+* [X] 04.29. péntek - Gyakorlati feladat
  

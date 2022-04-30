@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.groups.Tuple.tuple;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AreaDaoIT {
@@ -71,7 +72,12 @@ class AreaDaoIT {
         assertThat(areaFromDao.getCitys())
                 .isNotNull()
                 .hasSize(3)
-                .isEqualTo("");
+                .containsKeys("Bősárkány", "Rábcakapi", "Osli");
 
+        assertThat(areaFromDao.getCitys().values())
+                .extracting(City::getName, City::getPopulation)
+                .containsOnly(tuple("Bősárkány", 2046),
+                        tuple("Rábcakapi", 181),
+                        tuple("Osli", 911));
     }
 }

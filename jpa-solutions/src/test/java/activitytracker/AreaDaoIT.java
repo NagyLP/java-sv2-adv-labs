@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.groups.Tuple.tuple;
@@ -20,6 +21,7 @@ class AreaDaoIT {
 
     ActivityDao activityDao = new ActivityDao(factory);
     AreaDao areaDao = new AreaDao(factory);
+
 
     @AfterEach
     void contextClose() {
@@ -69,15 +71,29 @@ class AreaDaoIT {
 
         Area areaFromDao = areaDao.findAreaById(testArea.getId());
 
-        assertThat(areaFromDao.getCitys())
+        assertThat(areaFromDao.getCities())
                 .isNotNull()
                 .hasSize(3)
-                .containsKeys("Bősárkány", "Rábcakapi", "Osli");
+                .containsKeys("Bősárkány", "Rábcakapi", "Osli")
+                .extractingFromEntries(this::extractCityName,
+                        this::extractCityPopulation)
+                .containsOnly(tuple("Bősárkány", 2046),
+                        tuple("Rábcakapi", 181),
+                        tuple("Osli", 911));
 
-        assertThat(areaFromDao.getCitys().values())
+        assertThat(areaFromDao.getCities().values())
                 .extracting(City::getName, City::getPopulation)
                 .containsOnly(tuple("Bősárkány", 2046),
                         tuple("Rábcakapi", 181),
                         tuple("Osli", 911));
     }
+
+    private String extractCityName(Map.Entry<String, City> entry) {
+        return entry.getValue().getName();
+    }
+
+    private int extractCityPopulation(Map.Entry<String, City> entry) {
+        return entry.getValue().getPopulation();
+    }
+
 }

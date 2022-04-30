@@ -25,7 +25,7 @@ public class AreaDao {
     public Area findAreaById(long id) {
         EntityManager manager = factory.createEntityManager();
         try {
-            return manager.createQuery("select a from Area a join fetch a.citys where a.id = :id",
+            return manager.createQuery("select a from Area a join fetch a.cities where a.id = :id",
                             Area.class)
                     .setParameter("id", id)
                     .getSingleResult();

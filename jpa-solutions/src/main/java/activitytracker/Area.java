@@ -19,7 +19,7 @@ public class Area {
     private List<Activity> activities = new LinkedList<>();
 
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "area")
-    private Map<String, City> citys = new HashMap<>();
+    private Map<String, City> cities = new HashMap<>();
 
     public Area() {
     }
@@ -34,7 +34,7 @@ public class Area {
     }
 
     public void putCity(City city) {
-        citys.put(city.getName(), city);
+        cities.put(city.getName(), city);
         city.setArea(this);
     }
 
@@ -62,12 +62,12 @@ public class Area {
         this.activities = activities;
     }
 
-    public Map<String, City> getCitys() {
-        return citys;
+    public Map<String, City> getCities() {
+        return cities;
     }
 
-    public void setCitys(Map<String, City> citys) {
-        this.citys = citys;
+    public void setCities(Map<String, City> cities) {
+        this.cities = cities;
     }
 
     @Override

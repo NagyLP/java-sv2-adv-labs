@@ -14,7 +14,7 @@
 * [X] Lekérdezések gyakorlati feladat
 * [X] [Haladó lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769301-halado-lekerdezesek)
 * [X] Haladó lekérdezések gyakorlati feladat
-* [ ] [Deklaratív tranzakciókezelés videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769307-deklarativ-tranzakciokezeles)
+* [X] [Deklaratív tranzakciókezelés videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769307-deklarativ-tranzakciokezeles)
 
 ### Konzultációs gyakorlati feladatok
 

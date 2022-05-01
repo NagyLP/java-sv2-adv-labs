@@ -1,5 +1,6 @@
 package activitytracker;
 
+import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -84,7 +85,7 @@ class ActivityDaoIT {
     }
 
     @Test
-    void findActivityByIdWithLabels() {
+    void testFindActivityByIdWithLabels() {
         testOneActivity.setLabels(List.of("Cardio", "Country"));
         activityDao.saveActivity(testOneActivity);
 
@@ -97,12 +98,12 @@ class ActivityDaoIT {
     }
 
     @Test
-    void findActivityByIdWithTrackPoints() {
-        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022,1,1),
-                1.0,2.0));
-        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022,1,2),2.0,3.0));
-        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022,1,3),
-                3.0,4.0));
+    void testFindActivityByIdWithTrackPoints() {
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 1),
+                1.0, 2.0));
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 2), 2.0, 3.0));
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 3),
+                3.0, 4.0));
         activityDao.saveActivity(testOneActivity);
         Activity acivityFromDao = activityDao.findActivityByIdWithTrackPoints(
                 testOneActivity.getId());
@@ -110,11 +111,42 @@ class ActivityDaoIT {
         assertThat(acivityFromDao.getTrackPoints())
                 .isNotNull()
                 .hasSize(3);
-        assertEquals(LocalDate.of(2022,1,1), acivityFromDao
+        assertEquals(LocalDate.of(2022, 1, 1), acivityFromDao
                 .getTrackPoints().get(0).getTime());
         assertEquals(1.0, acivityFromDao
                 .getTrackPoints().get(0).getLatitude());
         assertEquals(4.0, acivityFromDao
                 .getTrackPoints().get(2).getLongitude());
+    }
+
+    @Test
+    void testFindTrackPointCountByActivity() {
+        testOneActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 1),
+                1.0, 1.0));
+        activityDao.saveActivity(testOneActivity);
+
+        Activity testTwoActivity = new Activity(LocalDateTime.of(2022, 4, 21, 19, 0),
+                "Biking", ActivityType.BIKING);
+        testTwoActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 4, 2), 2.0, 2.0));
+        testTwoActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 4, 2), 2.0, 2.0));
+        activityDao.saveActivity(testTwoActivity);
+
+        Activity testThreeActivity = new Activity(LocalDateTime.of(2022, 4, 23, 20, 0),
+                "Hiking", ActivityType.HIKING);
+        testTwoActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 3), 3.0, 3.0));
+        testTwoActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 3), 3.0, 3.0));
+        testTwoActivity.addTrackpoint(new TrackPoint(LocalDate.of(2022, 1, 3), 3.0, 3.0));
+        activityDao.saveActivity(testThreeActivity);
+
+
+        List<Object[]> acivityFromDao = activityDao.findTrackPointCountByActivity();
+
+        assertThat(acivityFromDao)
+                .isNotNull()
+                .hasSize(3)
+                .extracting(objects -> acivityFromDao.get(0), objects -> acivityFromDao.get(2))
+                .contains(tuple(new Object[]{"Biking", 2}, new Object[]{"NightFlow", 1}),
+                        tuple(new Object[]{"Biking", 2}, new Object[]{"NightFlow", 1}),
+                        tuple(new Object[]{"Biking", 2}, new Object[]{"NightFlow", 1}));
     }
 }

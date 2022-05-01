@@ -2,6 +2,7 @@ package activitytracker;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class ActivityDao {
@@ -69,7 +70,7 @@ public class ActivityDao {
         manager = factory.createEntityManager();
         try {
             return manager
-                    .createQuery("select a from Activity a join fetch a.labels where id = :id", Activity.class)
+                    .createQuery("select a from Activity a join fetch a.labels where a.id = :id", Activity.class)
 //  "select distinct a from Employee a left join fetch a.labels where id = :id"
 // Ha nincs adott értéke akkor is visszaadja, ill., ha több érték van egyszer adja vissza.
                     .setParameter("id", id)
@@ -86,6 +87,21 @@ public class ActivityDao {
                     .createQuery("select a from Activity a join fetch a.trackPoints where a.id = :id", Activity.class)
                     .setParameter("id", id)
                     .getSingleResult();
+        } finally {
+            manager.close();
+        }
+    }
+
+
+    public List<Coordinate> findTrackPointCoordinatesByDate(LocalDateTime afterThis, int start, int max) {
+        manager = factory.createEntityManager();
+        try {
+            return manager
+                    .createNamedQuery("findTrackPointCoordinatesByDate")
+                    .setParameter("time", afterThis)
+                    .setFirstResult(start)
+                    .setMaxResults(max)
+                    .getResultList();
         } finally {
             manager.close();
         }

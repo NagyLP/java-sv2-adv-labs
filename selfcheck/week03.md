@@ -10,9 +10,9 @@
 * [X] Több-több kapcsolat gyakorlati feladat
 * [X] [Entitások Mapekben videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769297-entitasok-mapekben)
 * [X] Entitások Mapekben gyakorlati feladat
-* [ ] [Lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769300-lekerdezesek)
-* [ ] Lekérdezések gyakorlati feladat
-* [ ] [Haladó lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769301-halado-lekerdezesek)
+* [X] [Lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769300-lekerdezesek)
+* [X] Lekérdezések gyakorlati feladat
+* [X] [Haladó lekérdezések videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769301-halado-lekerdezesek)
 * [ ] Haladó lekérdezések gyakorlati feladat
 * [ ] [Deklaratív tranzakciókezelés videó](https://e-learning.training360.com/courses/take/adatbazis-programozas-jpa-technologiaval/lessons/10769307-deklarativ-tranzakciokezeles)
 

@@ -4,7 +4,7 @@
 
 ### Spring bevezetés
 
-* [ ] [Többrétegű alkalmazások videó](https://e-learning.training360.com/courses/take/architect/lessons/18118857-tobbretegu-alkalmazasok)
+* [X] [Többrétegű alkalmazások videó](https://e-learning.training360.com/courses/take/architect/lessons/18118857-tobbretegu-alkalmazasok)
 * [ ] [Bevezetés a Spring Framework és Spring Boot használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546697-bevezetes-a-spring-framework-es-spring-boot-hasznalataba)
 * [ ] [Bevezetés a Spring Framework és Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268311-bevezetes-a-spring-framework-es-spring-boot-hasznalataba-gyakorlat)
 * [ ] Bevezetés a Spring Framework és Spring Boot használatába gyakorlati feladat

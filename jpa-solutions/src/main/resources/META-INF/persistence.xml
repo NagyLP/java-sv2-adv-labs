@@ -3,14 +3,31 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
               http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="TEST-pu"
+                      transaction-type="RESOURCE_LOCAL">
+        <exclude-unlisted-classes></exclude-unlisted-classes>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.url"    value="jdbc:h2:mem:test"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value="sa"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.temp.use_jdbc_metadata_defaults" value="true"/>
+        </properties>
+    </persistence-unit>
+
     <persistence-unit name="pu"
                       transaction-type="RESOURCE_LOCAL">
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="employees"/>
-            <property name="javax.persistence.jdbc.password" value="employees"/>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="activitytracker"/>
+            <property name="javax.persistence.jdbc.password" value="activitytracker"/>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://localhost/employees"/>
+                      value="jdbc:mariadb://localhost/activitytracker"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
         </properties>

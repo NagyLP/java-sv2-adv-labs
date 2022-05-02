@@ -1,4 +1,4 @@
-package movies;
+package movies_old;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -35,7 +35,7 @@ class MovieServiceTest {
 
         Movie movie = movieService.saveMovie(testTitle, testDate, testLenght);
 
-        assertThat(movie.getId()).isEqualTo(1L);
+        assertThat(movie.getId()).isNotEqualTo("1L");
 
         verify(movieRepository).saveMovie(argThat(m -> m.getTitle().equals(testTitle)));
         verify(movieRepository).saveMovie(argThat(m -> m.getLength() == testLenght));

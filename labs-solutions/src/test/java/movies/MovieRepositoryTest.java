@@ -1,83 +1,81 @@
 package movies;
 
-import org.flywaydb.core.Flyway;
-import org.h2.jdbcx.JdbcDataSource;
+
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.PrePersist;
-import javax.swing.text.html.parser.Entity;
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class MovieRepositoryTest {
 
-//    Flyway flyway;
     MovieRepository repository;
     EntityManagerFactory emf;
-    Movie testMovie = new Movie("Titanic", LocalDate.of(1997,12,19), 194);
 
     @BeforeEach
-    void setUp() {
+    void init(){
         emf = Persistence.createEntityManagerFactory("TEST-pu");
+
         repository = new MovieRepository(emf);
     }
 
-    @Test
-    void testSaveMovie() {
-        Movie movie = repository.saveMovie(testMovie);
 
-        assertThat(movie.getId()).isNotNull();
+    @Test
+    void testSaveMovie(){
+        Movie movie = repository.saveMovie(new Movie("Titanic", LocalDate.of(1994,12,1),121));
+
+
+
+        assertThat(movie.getId()).isNotEqualTo(null);
+
     }
 
     @Test
-    void testFindByTitle() {
+    void testFindByTitle(){
+        Movie movie = repository.saveMovie(new Movie("Titanic", LocalDate.of(1994,12,1),121));
+        Optional<Movie> result = repository.findByTitle("Titanic");
+
+        assertThat(result.get().getLength()).isEqualTo(121);
+    }
+
+    @Test
+    void testFindByTitleWithRatings(){
+        Movie movie = new Movie("Titanic", LocalDate.of(1994,12,1),121);
+        movie.addRating(new Rating(6.7,"user1"));
+        movie.addRating(new Rating(6.9,"user2"));
+        repository.saveMovie(movie);
+
+        Movie result = repository.findMovieByTitleWithRatings("Titanic");
+
+        assertThat(result.getLength()).isEqualTo(121);
+        assertThat(result.getRatings()).extracting(Rating::getValue).containsExactly(6.7,6.9);
 
     }
 
     @Test
-    void testFindByTitleWithRatings() {
-        testMovie.addRating(new Rating(6.7, "user1"));
-        testMovie.addRating(new Rating(6.9, "user2"));
-        repository.saveMovie(testMovie);
-        Movie testResult = repository.findMovieByTitleWithRatings("Titanic");
-        System.out.println(testResult.getRatings());
-        assertThat(testResult.getLength()).isEqualTo(194);
+    void testFindMoviesReleasedAfter(){
+        Movie movie = new Movie("Titanic", LocalDate.of(1994,12,1),121);
+        Movie movie1 = new Movie("LOTR", LocalDate.of(1994,12,1),121);
+        movie.addRating(new Rating(6.7,"user1"));
+        movie.addRating(new Rating(6.9,"user2"));
+        repository.saveMovie(movie);
+        repository.saveMovie(movie1);
+
+        List<Movie> result = repository.findMoviesReleasedAfter(LocalDate.of(1994,11,11));
+        System.out.println(result.size());
+
+
     }
 
-    @Test
-    void findRatingsByUsername() {
 
-    }
 
-    //    @BeforeEach
-//    void init() {
-//        JdbcDataSource dataSource = new JdbcDataSource();
-//
-//        dataSource.setUrl("jdbc:h2:~/test");
-//        dataSource.setUser("sa");
-//        dataSource.setPassword("sa");
-//
-//        flyway = Flyway.configure().
-//
-//                dataSource(dataSource).
-//
-//                load();
-//        flyway.clean();
-//        flyway.migrate();
-//
-//        repository = new
-//
-//                MovieRepository(dataSource);
-//    }
-//
-//    @Test
-//    void testSaveMovie() {
-//        repository.saveMovie(new Movie("Titanic", LocalDate.of(2021, 1, 2), 121));
-//    }
+
+
 
 }

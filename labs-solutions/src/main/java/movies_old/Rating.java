@@ -1,11 +1,11 @@
-package movies;
-
+package movies_old;
 
 import javax.persistence.Embeddable;
 
 @Embeddable
+//@Entity
+//@Table(name = "ratings")
 public class Rating {
-
 
     private double value;
     private String username;
@@ -13,8 +13,8 @@ public class Rating {
     public Rating() {
     }
 
-    public Rating(double value, String username) {
-        this.value = value;
+    public Rating(double rating, String username) {
+        this.value = rating;
         this.username = username;
     }
 
@@ -22,12 +22,12 @@ public class Rating {
         return value;
     }
 
-    public void setValue(double value) {
-        this.value = value;
-    }
-
     public String getUsername() {
         return username;
+    }
+
+    public void setValue(double rating) {
+        this.value = rating;
     }
 
     public void setUsername(String username) {
@@ -36,9 +36,6 @@ public class Rating {
 
     @Override
     public String toString() {
-        return "Rating{" +
-                "value=" + value +
-                ", username='" + username + '\'' +
-                '}';
+        return value + ", " + username;
     }
 }

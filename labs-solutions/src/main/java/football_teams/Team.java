@@ -6,10 +6,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "teams")
+@NamedQuery(name = "fetchTeamsByCountryNLeague", query =
+        "SELECT t FROM Team t" +
+                " WHERE t.country = :country AND t.league = :league ORDER BY t.score DESC")
+// Gondolom, ha több szálon, több csomagban/szekvenciában? visz. egyidőben érkezik kéréstömegek, akkor tán így gyorsabb elérésű, és "szétoszthatóbb" lehet.
 public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String country;
     @Enumerated(value = EnumType.STRING)
@@ -24,11 +29,24 @@ public class Team {
     public Team() {
     }
 
+    public Team(String country, League league) {
+        this.country = country;
+        this.league = league;
+    }
+
     public Team(String name, String country, League league, int score) {
         this.name = name;
         this.country = country;
         this.league = league;
         this.score = score;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -1,15 +1,9 @@
 package movies;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,62 +24,34 @@ public class MovieRepository {
         return movie;
     }
 
+
     public Optional<Movie> findByTitle(String title) {
-        EntityManager manager = factory.createEntityManager();
-        Movie foundMovie = manager.createQuery(
-                "select m from Movie m where m.title = :title", Movie.class)
+        EntityManager entityManager = factory.createEntityManager();
+        Movie result = entityManager.createQuery("select m from Movie m where m.title=:title", Movie.class)
                 .setParameter("title", title)
                 .getSingleResult();
-        manager.close();
-        return Optional.of(foundMovie);
+        entityManager.close();
+        return Optional.of(result);
     }
 
     public Movie findMovieByTitleWithRatings(String title){
-        EntityManager manager = factory.createEntityManager();
-        Movie foundMovie = manager.createQuery(
-                        "select m from Movie m" +
-                            " join fetch m.ratings" +
-                            " where m.title = :title", Movie.class)
+        EntityManager entityManager = factory.createEntityManager();
+        Movie result = entityManager.createQuery("select m from Movie m join fetch m.ratings where m.title=:title", Movie.class)
                 .setParameter("title", title)
                 .getSingleResult();
-        manager.close();
-        return foundMovie;
+        entityManager.close();
+        return result;
     }
 
-//    public List<Rating> findRaingsByUsername(String username){
-//        EntityManager manager = factory.createEntityManager();;
-//        List<Rating> result = manager.createQuery("select r from Rating r where r.username=:username", Rating.class)
-//    }
+    public List<Movie> findMoviesReleasedAfter(LocalDate date){
+        EntityManager entityManager = factory.createEntityManager();
+        List<Movie> result = entityManager.createQuery("select distinct m from Movie m left join fetch m.ratings where m.releaseDate>:date", Movie.class)
+                .setParameter("date", date)
+                .getResultList();
+        entityManager.close();
+        return result;
+    }
 
-//    private JdbcTemplate jdbcTemplate;
-//
-//
-//    public MovieRepository(DataSource dataSource) {
-//        jdbcTemplate = new JdbcTemplate(dataSource);
-//    }
-//
-//
-//    public Movie saveMovie(Movie movie){
-//        KeyHolder keyHolder = new GeneratedKeyHolder();
-//        jdbcTemplate.update(con ->{
-//            PreparedStatement ps =
-//                    con.prepareStatement("insert into movies(title,date_of_release,length) values(?,?,?)", Statement.RETURN_GENERATED_KEYS);
-//            ps.setString(1,movie.getTitle());
-//            ps.setDate(2, Date.valueOf(movie.getReleaseDate()));
-//            ps.setInt(3, movie.getLength());
-//            return ps;
-//        }, keyHolder);
-//
-//        return new Movie(keyHolder.getKey().longValue(),movie.getTitle(),movie.getReleaseDate(),movie.getLength());
-//    }
-//
-//    public Optional<Movie> findByTitle(String title){
-//        Movie found = jdbcTemplate.queryForObject("select * from movies where title = ?",
-//                (rs, rowNum)->new Movie(rs.getLong("id"),rs.getString("title"),rs.getDate("date_of_relase").toLocalDate(),rs.getInt("length")),
-//                title);
-//
-//        return Optional.of(found);
-//    }
 
 
 }

@@ -2,50 +2,68 @@ package movies;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+
 
 @Entity
 @Table(name = "movies")
 public class Movie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String title;
-    @Column(name = "dat_of_release")
+    @Column(name="dat_of_release")
     private LocalDate releaseDate;
     private int length;
 
     @ElementCollection
-    @CollectionTable(name = "ratings", joinColumns = @JoinColumn(name = "movie_id"))
-//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Rating> ratings = new LinkedList<>();
+    @CollectionTable(name="ratings", joinColumns = @JoinColumn(name="movie_id"))
+    private List<Rating> ratings = new ArrayList<>();
+
+
+
 
     public Movie() {
     }
 
     public Movie(String title, LocalDate releaseDate, int length) {
-        this.title = title;
-        this.releaseDate = releaseDate;
-        this.length = length;
-    }
-
-    public Movie(Long id, String title, LocalDate releaseDate, int length) {
         this.id = UUID.randomUUID().toString();
         this.title = title;
         this.releaseDate = releaseDate;
         this.length = length;
     }
 
-    public void addRating(Rating rating) {
+//    public Movie(Long id, String title, LocalDate releaseDate, int length) {
+//        this.id = id;
+//        this.title = title;
+//        this.releaseDate = releaseDate;
+//        this.length = length;
+//    }
+
+    public void addRating(Rating rating){
         ratings.add(rating);
     }
 
-    public void setId(Long id) {
-        this.id = id.toString();
+
+    public String getTitle() {
+        return title;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+
+    public int getLength() {
+        return length;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setTitle(String title) {
@@ -60,22 +78,6 @@ public class Movie {
         this.length = length;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public LocalDate getReleaseDate() {
-        return releaseDate;
-    }
-
-    public int getLength() {
-        return length;
-    }
-
-    public String getId() {
-        return id;
-    }
-
     public List<Rating> getRatings() {
         return ratings;
     }
@@ -84,13 +86,5 @@ public class Movie {
         this.ratings = ratings;
     }
 
-    @Override
-    public String toString() {
-        return "\nMovie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", releaseDate=" + releaseDate +
-                ", length=" + length +
-                '}';
-    }
+
 }

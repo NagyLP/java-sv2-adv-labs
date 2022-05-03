@@ -5,9 +5,9 @@
 ### Spring bevezetés
 
 * [X] [Többrétegű alkalmazások videó](https://e-learning.training360.com/courses/take/architect/lessons/18118857-tobbretegu-alkalmazasok)
-* [ ] [Bevezetés a Spring Framework és Spring Boot használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546697-bevezetes-a-spring-framework-es-spring-boot-hasznalataba)
-* [ ] [Bevezetés a Spring Framework és Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268311-bevezetes-a-spring-framework-es-spring-boot-hasznalataba-gyakorlat)
-* [ ] Bevezetés a Spring Framework és Spring Boot használatába gyakorlati feladat
+* [X] [Bevezetés a Spring Framework és Spring Boot használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546697-bevezetes-a-spring-framework-es-spring-boot-hasznalataba)
+* [X] [Bevezetés a Spring Framework és Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268311-bevezetes-a-spring-framework-es-spring-boot-hasznalataba-gyakorlat)
+* [X] Bevezetés a Spring Framework és Spring Boot használatába gyakorlati feladat
 * [ ] [Bevezetés a Spring Boot használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546620-bevezetes-a-spring-boot-hasznalataba)
 * [ ] [Bevezetés a Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268335-bevezetes-a-spring-boot-hasznalataba-gyakorlat)
 * [ ] Bevezetés a Spring Boot használatába gyakorlati feladat
@@ -40,7 +40,7 @@
 Amennyiben a konzultáción nincs konkrét kiadott gyakorlati feladat, vagy nincs egy olyan heti, nagy feladat, ami
 megfeleltethető több napi feladatnak, akkor innentől kezdve a konzultáción folyamán beírt kódokat fogjuk kérni.
 
-* [ ] 05.02. hétfő - Gyakorlati feladat
+* [X] 05.02. hétfő - Gyakorlati feladat
 * [ ] 05.03. kedd - Gyakorlati feladat
 * [ ] 05.05. csütörtök - Gyakorlati feladat
 * [ ] 05.06. péntek - Gyakorlati feladat

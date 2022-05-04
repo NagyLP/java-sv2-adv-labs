@@ -1,6 +1,6 @@
 package elearning;
 
-public class ChildDao {
+public class JPQL_Querys {
 
 // Adott év után született gyerekek:
     private String queryChildBirthAfter =

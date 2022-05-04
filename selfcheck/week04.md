@@ -9,8 +9,8 @@
 * [X] [Bevezetés a Spring Framework és Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268311-bevezetes-a-spring-framework-es-spring-boot-hasznalataba-gyakorlat)
 * [X] Bevezetés a Spring Framework és Spring Boot használatába gyakorlati feladat
 * [X] [Bevezetés a Spring Boot használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546620-bevezetes-a-spring-boot-hasznalataba)
-* [ ] [Bevezetés a Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268335-bevezetes-a-spring-boot-hasznalataba-gyakorlat)
-* [ ] Bevezetés a Spring Boot használatába gyakorlati feladat
+* [X] [Bevezetés a Spring Boot használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268335-bevezetes-a-spring-boot-hasznalataba-gyakorlat)
+* [X] Bevezetés a Spring Boot használatába gyakorlati feladat
 * [ ] [Spring Beanek videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546692-spring-beanek)
 * [ ] [Spring Beanek - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268381-spring-beanek-gyakorlat)  
 * [ ] Spring Beanek gyakorlati feladat

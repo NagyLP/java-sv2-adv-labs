@@ -17,9 +17,9 @@
 * [X] [Konfiguráció Javaban videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547048-konfiguracio-javaban)
 * [X] [Konfiguráció Javaban - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268408-konfiguracio-javaban-gyakorlat)  
 * [X] Konfiguráció Javaban gyakorlati feladat
-* [ ] [Build és futtatás Mavennel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547014-build-es-futtatas-mavennel)
-* [ ] [Build és futtatás Mavennel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268708-build-es-futtatas-mavennel-gyakorlat)
-* [ ] Build és futtatás Mavennel gyakorlati feladat
+* [X] [Build és futtatás Mavennel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547014-build-es-futtatas-mavennel)
+* [X] [Build és futtatás Mavennel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268708-build-es-futtatas-mavennel-gyakorlat)
+* [X] Build és futtatás Mavennel gyakorlati feladat
 * [ ] [Unit és integrációs tesztek videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547634-unit-es-integracios-tesztek)
 * [ ] [Unit és integrációs tesztek - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268760-unit-es-integracios-tesztek-gyakorlat)
 * [ ] Unit és integrációs tesztek gyakorlati feladat

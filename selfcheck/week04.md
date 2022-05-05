@@ -13,10 +13,10 @@
 * [X] Bevezetés a Spring Boot használatába gyakorlati feladat
 * [X] [Spring Beanek videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20546692-spring-beanek)
 * [X] [Spring Beanek - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268381-spring-beanek-gyakorlat)  
-* [ ] Spring Beanek gyakorlati feladat
-* [ ] [Konfiguráció Javaban videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547048-konfiguracio-javaban)
-* [ ] [Konfiguráció Javaban - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268408-konfiguracio-javaban-gyakorlat)  
-* [ ] Konfiguráció Javaban gyakorlati feladat
+* [X] Spring Beanek gyakorlati feladat
+* [X] [Konfiguráció Javaban videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547048-konfiguracio-javaban)
+* [X] [Konfiguráció Javaban - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268408-konfiguracio-javaban-gyakorlat)  
+* [X] Konfiguráció Javaban gyakorlati feladat
 * [ ] [Build és futtatás Mavennel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547014-build-es-futtatas-mavennel)
 * [ ] [Build és futtatás Mavennel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268708-build-es-futtatas-mavennel-gyakorlat)
 * [ ] Build és futtatás Mavennel gyakorlati feladat

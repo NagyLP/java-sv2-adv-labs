@@ -1,19 +1,14 @@
 package locations;
 
-import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@Service
+//@Service
 public class LocationsService {
 
-    private List<Location> locations;
+    private final List<Location> locations;
 
     public LocationsService(List<Location> locations) {
-        this.locations = new ArrayList<>(Arrays.asList(new Location(
-                1L, "TesztHejj", 2, 3)));
+        this.locations = locations;
     }
 
 

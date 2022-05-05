@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.tuple;
 
 class TeamRepositoryTest {
 
@@ -18,27 +19,27 @@ class TeamRepositoryTest {
     @BeforeEach
     public void setUp() {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory(
-                "football_teams");
+                "pu");
         teamRepo = new TeamRepository(factory);
     }
 
     @Test
     @DisplayName("Test:Create-Read")
     void fetchTeamWithPlayerName() {
-        Team team = new Team("Ajax", "Netherlands", League.EREDIVISIE, 99);
-        team.addPlayers("Edwin van der Sart");
-        team.addPlayers("Hendrik Johannes Cruijff");
-        team.addPlayers("és John Doe");
+        Team team = new Team("Ajax", "Netherlands", League.EREDIVISIE, 1_999_999_999);
+        team.addPlayers(new Player("Edwin van der Sart", 1_000_000));
+        team.addPlayers(new Player("Hendrik Johannes Cruijff", 500_000));
+        team.addPlayers(new Player("és John Doe", 999_999_999));
         teamRepo.insertTeam(team);
-        Team teamFromDao = teamRepo.fetchTeamWithPlayerName("Ajax");
+        Team teamFromDao = teamRepo.fetchTeamWithPlayerName("Edwin van der Sart");
 
         assertThat(teamFromDao.getPlayers())
                 .isNotNull()
                 .hasSize(3)
-                .extracting(t -> teamFromDao.getPlayers())
-                .containsOnly(List.of("Edwin van der Sart",
+                .extracting(t -> teamFromDao.getPlayers().toString())
+                .containsOnly("Edwin van der Sart",
                         "Hendrik Johannes Cruijff",
-                        "és John Doe"));
+                        "és John Doe");
     }
 
 

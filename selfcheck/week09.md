@@ -23,10 +23,4 @@
 
 ### Konzultációs gyakorlati feladatok
 
-Amennyiben a konzultáción nincs konkrét kiadott gyakorlati feladat, vagy nincs egy olyan heti, nagy feladat, ami
-megfeleltethető több napi feladatnak, akkor innentől kezdve a konzultáción folyamán beírt kódokat fogjuk kérni.
-
-* [ ] 06.06. hétfő - Gyakorlati feladat
-* [ ] 06.07. kedd - Gyakorlati feladat
-* [ ] 06.09. csütörtök - Gyakorlati feladat
-* [ ] 06.10. péntek - Gyakorlati feladat
+* [ ] Az [itt](https://github.com/Strukturavaltas2-Halado-Java/java-strukturavalto2-halado/blob/master/labs.md) leírt, erre a hétre kiadott gyakorlati feladat(ok). 

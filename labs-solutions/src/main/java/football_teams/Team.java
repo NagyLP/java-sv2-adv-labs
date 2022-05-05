@@ -17,28 +17,35 @@ public class Team {
     private Long id;
     private String name;
     private String country;
-    @Enumerated(value = EnumType.STRING)
+
+    @Enumerated(EnumType.STRING)
     private League league;
     private int score;
-    @ElementCollection
-    @CollectionTable(name = "players", joinColumns = @JoinColumn(name = "team_id"))
-    @Column(name = "player_name")
-    @OrderColumn(name = "player_")
-    private List<String> players = new ArrayList<>();
+    //    @ElementCollection
+//    @CollectionTable(name = "players", joinColumns = @JoinColumn(name = "team_id"))
+//    @Column(name = "player_name")
+//    @OrderColumn(name = "player_")
+
+    @OneToMany(mappedBy = "team")
+    private List<Player> players = new ArrayList<>();
+
+    private int points;
+    private int budget;
 
     public Team() {
     }
 
-    public Team(String country, League league) {
-        this.country = country;
-        this.league = league;
-    }
-
-    public Team(String name, String country, League league, int score) {
+    public Team(String name, String country, League league, int budget) {
         this.name = name;
         this.country = country;
         this.league = league;
-        this.score = score;
+        this.budget = budget;
+    }
+
+
+    public void addPlayers(Player player) {
+        players.add(player);
+        player.setTeam(this);
     }
 
     public Long getId() {
@@ -70,7 +77,6 @@ public class Team {
     }
 
     public int getScore() {
-
         return score;
     }
 
@@ -82,15 +88,27 @@ public class Team {
         this.league = league;
     }
 
-    public List<String> getPlayers() {
+    public List<Player> getPlayers() {
         return players;
     }
 
-    public void setPlayers(List<String> players) {
+    public void setPlayers(List<Player> players) {
         this.players = players;
     }
 
-    public void addPlayers(String player){
-        players.add(player);
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public int getBudget() {
+        return budget;
+    }
+
+    public void setBudget(int budget) {
+        this.budget = budget;
     }
 }

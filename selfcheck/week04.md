@@ -20,9 +20,9 @@
 * [X] [Build és futtatás Mavennel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547014-build-es-futtatas-mavennel)
 * [X] [Build és futtatás Mavennel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268708-build-es-futtatas-mavennel-gyakorlat)
 * [X] Build és futtatás Mavennel gyakorlati feladat
-* [ ] [Unit és integrációs tesztek videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547634-unit-es-integracios-tesztek)
-* [ ] [Unit és integrációs tesztek - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268760-unit-es-integracios-tesztek-gyakorlat)
-* [ ] Unit és integrációs tesztek gyakorlati feladat
+* [X] [Unit és integrációs tesztek videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547634-unit-es-integracios-tesztek)
+* [X] [Unit és integrációs tesztek - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268760-unit-es-integracios-tesztek-gyakorlat)
+* [X] Unit és integrációs tesztek gyakorlati feladat
 * [ ] [Twelve Factor App videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547698-twelve-factor-app)
 * [ ] Twelve Factor App gyakorlati feladat
 * [ ] [Bevezetés a Docker használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548359-bevezetes-a-docker-hasznalataba)
@@ -41,6 +41,6 @@ Amennyiben a konzultáción nincs konkrét kiadott gyakorlati feladat, vagy ninc
 megfeleltethető több napi feladatnak, akkor innentől kezdve a konzultáción folyamán beírt kódokat fogjuk kérni.
 
 * [X] 05.02. hétfő - Gyakorlati feladat
-* [ ] 05.03. kedd - Gyakorlati feladat
-* [ ] 05.05. csütörtök - Gyakorlati feladat
+* [X] 05.03. kedd - Gyakorlati feladat
+* [X] 05.05. csütörtök - Gyakorlati feladat
 * [ ] 05.06. péntek - Gyakorlati feladat

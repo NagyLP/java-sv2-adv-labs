@@ -1,7 +1,5 @@
 package football_teams;
 
-import javax.persistence.JoinColumn;
-
 public class TeamPlayerService {
 
     private TeamRepository teamRepository;
@@ -28,6 +26,5 @@ public class TeamPlayerService {
             throw new IllegalArgumentException("Cannot transfer player, Team budget: "
                     + team.getBudget());
         }
-
     }
 }

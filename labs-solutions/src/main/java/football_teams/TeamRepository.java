@@ -29,12 +29,12 @@ public class TeamRepository {
         return team;
     }
 
-    public Team fetchTeamWithPlayerName(String name) {
+    public Team fetchTeamByNameWithPlayers(String name) {
         EntityManager manager = factory.createEntityManager();
         try {
             return manager.createQuery(
                             "select distinct t from Team t" +
-                                    " left join fetch t.players where t.name = :name",Team.class)
+                                    " left join fetch t.players where t.name = :name", Team.class)
                     .setParameter("name", name)
                     .getSingleResult();
         } finally {
@@ -64,7 +64,7 @@ public class TeamRepository {
         }
     }
 
-    public Team updateBudget(long teamId, int price){
+    public Team updateBudget(long teamId, int price) {
         EntityManager manager = factory.createEntityManager();
         manager.getTransaction().begin();
         Team team = manager.getReference(Team.class, teamId);

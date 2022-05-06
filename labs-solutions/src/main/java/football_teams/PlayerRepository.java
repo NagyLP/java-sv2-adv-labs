@@ -40,10 +40,10 @@ public class PlayerRepository {
 
     public Player updatePlayerTeam(long playerId, long teamId){
         EntityManager em = factory.createEntityManager();
-        em.getTransaction().begin();
         Team team = em.getReference(Team.class, teamId);
         Player player = em.getReference(Player.class, playerId);
         player.setTeam(team);
+        em.getTransaction().begin();
         em.persist(player);
         em.getTransaction().commit();
         em.close();

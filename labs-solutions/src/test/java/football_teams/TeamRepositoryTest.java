@@ -31,12 +31,12 @@ class TeamRepositoryTest {
         team.addPlayers(new Player("Hendrik Johannes Cruijff", 500_000));
         team.addPlayers(new Player("és John Doe", 999_999_999));
         teamRepo.insertTeam(team);
-        Team teamFromDao = teamRepo.fetchTeamWithPlayerName("Edwin van der Sart");
+        Team teamFromDao = teamRepo.fetchTeamByNameWithPlayers("Ajax");
 
         assertThat(teamFromDao.getPlayers())
                 .isNotNull()
                 .hasSize(3)
-                .extracting(t -> teamFromDao.getPlayers().toString())
+                .extracting(Player::getName)
                 .containsOnly("Edwin van der Sart",
                         "Hendrik Johannes Cruijff",
                         "és John Doe");
@@ -50,7 +50,7 @@ class TeamRepositoryTest {
         teamRepo.updateTeamScoreById(team.getId(),
                 987_654_321);
 
-        assertThat(teamRepo.fetchTeamWithPlayerName("Ajax").getScore())
+        assertThat(teamRepo.fetchTeamByNameWithPlayers("Ajax").getScore())
                 .isEqualTo(987_654_321);
     }
 
@@ -76,7 +76,7 @@ class TeamRepositoryTest {
         assertThat(teamRepo.fetchTeamsByCountryNLeague("Netherlands", League.EERSTE_DIVISIE))
                 .isNotNull()
                 .hasSize(1)
-                .extracting(Team::getScore)
+                .extracting(Team::getBudget)
                 .containsOnly(1);
     }
 

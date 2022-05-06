@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Test;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import java.util.List;
-
-import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -25,7 +22,7 @@ public class TeamPlayerServiceTest {
         Team team = teamRepository.insertTeam(new Team("Ajax", "Netherland", League.EREDIVISIE, 10_000_000));
         Player player = playerRepository.savePlayer(new Player("Sart", 100_000));
         service.transferPlayer(team.getId(), player.getId());
-        System.out.println(teamRepository.fetchTeamWithPlayerName("Sart"));
+        System.out.println(teamRepository.fetchTeamByNameWithPlayers("Ajax"));
 
         Team teamTwoo = teamRepository.insertTeam(new Team("Honvéd SC", "Magyarország", League.EREDIVISIE, 10_000_000));
         service.transferPlayer(teamTwoo.getId(), player.getId());
@@ -35,6 +32,5 @@ public class TeamPlayerServiceTest {
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
                 () -> service.transferPlayer(teamThree.getId(), player.getId()));
         assertEquals("Cannot transfer player, Team budget: " + teamThree.getBudget(), iae.getMessage());
-        ;
     }
 }

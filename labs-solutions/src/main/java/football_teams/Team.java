@@ -19,6 +19,7 @@ public class Team {
     private String country;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "team_league")
     private League league;
     private int score;
     //    @ElementCollection
@@ -26,7 +27,7 @@ public class Team {
 //    @Column(name = "player_name")
 //    @OrderColumn(name = "player_")
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "team", cascade = CascadeType.PERSIST)
     private List<Player> players = new ArrayList<>();
 
     private int points;

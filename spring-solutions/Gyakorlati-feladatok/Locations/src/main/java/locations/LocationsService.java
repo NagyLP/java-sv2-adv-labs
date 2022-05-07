@@ -8,15 +8,13 @@ import java.util.List;
 @Service
 public class LocationsService {
 
-    private final List<Location> locations;
+    private List<Location> locations = new ArrayList<>();
 
     public LocationsService(List<Location> locations) {
-        this.locations = new ArrayList<>(List.of(new Location(
-                1L, "TesztHejj", 2, 3)));
+        this.locations = locations;
     }
 
-
-    public List<Location> getLocations() {
+     public List<Location> getLocations() {
         return locations;
     }
 }

@@ -1,5 +1,8 @@
 package locations;
 
+import org.springframework.stereotype.Component;
+
+
 public class Location {
 
     private Long id;

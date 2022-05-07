@@ -1,36 +1,63 @@
 package football_teams;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.when;
 
-public class TeamPlayerServiceTest {
+@ExtendWith(MockitoExtension.class)
+class TeamPlayerServiceTest {
 
-    EntityManagerFactory factory = Persistence.createEntityManagerFactory(
-            "pu");
-    TeamRepository teamRepository = new TeamRepository(factory);
-    PlayerRepository playerRepository = new PlayerRepository(factory);
-    TeamPlayerService service = new TeamPlayerService(teamRepository, playerRepository);
+    @Mock
+    TeamRepository teamRepository;
+    @Mock
+    PlayerRepository playerRepository;
+    @InjectMocks
+    TeamPlayerService service;
+    Team ajax;
+    Team jongAjax;
+    Player sart;
 
+    @BeforeEach
+    void setUp() {
+// Given
+        ajax = new Team("Ajax", "Netherland", League.EREDIVISIE,
+                999_000_000);
+        jongAjax = new Team("Jong Ajax", "Netherland", League.EERSTE_DIVISIE,
+                1_000_000);
+        sart = new Player("Sart",
+                1_000_000);
+    }
 
     @Test
-    void testTransfer() {
-        Team team = teamRepository.insertTeam(new Team("Ajax", "Netherland", League.EREDIVISIE, 10_000_000));
-        Player player = playerRepository.savePlayer(new Player("Sart", 100_000));
-        service.transferPlayer(team.getId(), player.getId());
-        System.out.println(teamRepository.fetchTeamByNameWithPlayers("Ajax"));
+    @DisplayName("When Budget is to low.")
+    void transferPlayer() {
+        when(teamRepository.fetchTeamById(1L)).thenReturn(jongAjax);
+        sart.setTeam(ajax);
+        when(playerRepository.findPlayerById(2L)).thenReturn(sart);
 
-        Team teamTwoo = teamRepository.insertTeam(new Team("Honvéd SC", "Magyarország", League.EREDIVISIE, 10_000_000));
-        service.transferPlayer(teamTwoo.getId(), player.getId());
-        System.out.println(teamTwoo.getPlayers());
-
-        Team teamThree = teamRepository.insertTeam(new Team("Soroksár SC", "Magyarország", League.EREDIVISIE, 10_000));
-        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
-                () -> service.transferPlayer(teamThree.getId(), player.getId()));
-        assertEquals("Cannot transfer player, Team budget: " + teamThree.getBudget(), iae.getMessage());
+        assertThrows(IllegalArgumentException.class,
+                () -> service.transferPlayer(1L, 2L))
+                .getMessage()
+                .contentEquals("Cannot transfer player, Team budget: "
+                        + ajax.getBudget());
     }
+
+    @Test
+    @DisplayName("When Player have no Team.")
+    void transferPlayerPlayerWithNoTeam() {
+        when(teamRepository.fetchTeamById(1L)).thenReturn(ajax);
+        sart.setTeam(ajax);
+
+        assertThat(teamRepository.fetchTeamById(1L).getBudget())
+                .isEqualTo(999_000_000);
+    }
+
 }

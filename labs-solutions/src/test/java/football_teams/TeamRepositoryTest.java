@@ -7,10 +7,7 @@ import org.junit.jupiter.api.Test;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.tuple;
 
 class TeamRepositoryTest {
 
@@ -78,6 +75,7 @@ class TeamRepositoryTest {
                 .hasSize(1)
                 .extracting(Team::getBudget)
                 .containsOnly(1);
+
     }
 
 }

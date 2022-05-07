@@ -23,11 +23,11 @@
 * [X] [Unit és integrációs tesztek videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547634-unit-es-integracios-tesztek)
 * [X] [Unit és integrációs tesztek - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268760-unit-es-integracios-tesztek-gyakorlat)
 * [X] Unit és integrációs tesztek gyakorlati feladat
-* [ ] [Twelve Factor App videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547698-twelve-factor-app)
-* [ ] Twelve Factor App gyakorlati feladat
-* [ ] [Bevezetés a Docker használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548359-bevezetes-a-docker-hasznalataba)
-* [ ] [Bevezetés a Docker használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268810-bevezetes-a-docker-hasznalataba-gyakorlat)
-* [ ] Bevezetés a Docker használatába gyakorlati feladat
+* [X] [Twelve Factor App videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20547698-twelve-factor-app)
+* [X] Twelve Factor App gyakorlati feladat
+* [X] [Bevezetés a Docker használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548359-bevezetes-a-docker-hasznalataba)
+* [X] [Bevezetés a Docker használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268810-bevezetes-a-docker-hasznalataba-gyakorlat)
+* [X] Bevezetés a Docker használatába gyakorlati feladat
 * [ ] [Java alkalmazások Dockerrel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548219-java-alkalmazasok-dockerrel)
 * [ ] [Java alkalmazások Dockerrel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268824-java-alkalmazasok-dockerrel-gyakorlat)
 * [ ] Java alkalmazások Dockerrel gyakorlati feladat

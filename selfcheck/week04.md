@@ -28,9 +28,9 @@
 * [X] [Bevezetés a Docker használatába videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548359-bevezetes-a-docker-hasznalataba)
 * [X] [Bevezetés a Docker használatába - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268810-bevezetes-a-docker-hasznalataba-gyakorlat)
 * [X] Bevezetés a Docker használatába gyakorlati feladat
-* [ ] [Java alkalmazások Dockerrel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548219-java-alkalmazasok-dockerrel)
-* [ ] [Java alkalmazások Dockerrel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268824-java-alkalmazasok-dockerrel-gyakorlat)
-* [ ] Java alkalmazások Dockerrel gyakorlati feladat
+* [X] [Java alkalmazások Dockerrel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548219-java-alkalmazasok-dockerrel)
+* [X] [Java alkalmazások Dockerrel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268824-java-alkalmazasok-dockerrel-gyakorlat)
+* [X] Java alkalmazások Dockerrel gyakorlati feladat
 * [ ] [Feltöltés GIT repository-ba videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548208-feltoltes-git-repository-ba)
 * [ ] [Feltöltés GIT repository-ba - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268848-feltoltes-git-repository-ba-gyakorlat)
 * [ ] Feltöltés GIT repository-ba gyakorlati feladat
@@ -43,4 +43,4 @@ megfeleltethető több napi feladatnak, akkor innentől kezdve a konzultáción 
 * [X] 05.02. hétfő - Gyakorlati feladat
 * [X] 05.03. kedd - Gyakorlati feladat
 * [X] 05.05. csütörtök - Gyakorlati feladat
-* [ ] 05.06. péntek - Gyakorlati feladat
+* [X] 05.06. péntek - Gyakorlati feladat

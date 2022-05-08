@@ -31,9 +31,9 @@
 * [X] [Java alkalmazások Dockerrel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548219-java-alkalmazasok-dockerrel)
 * [X] [Java alkalmazások Dockerrel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268824-java-alkalmazasok-dockerrel-gyakorlat)
 * [X] Java alkalmazások Dockerrel gyakorlati feladat
-* [ ] [Feltöltés GIT repository-ba videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548208-feltoltes-git-repository-ba)
-* [ ] [Feltöltés GIT repository-ba - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268848-feltoltes-git-repository-ba-gyakorlat)
-* [ ] Feltöltés GIT repository-ba gyakorlati feladat
+* [X] [Feltöltés GIT repository-ba videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548208-feltoltes-git-repository-ba)
+* [X] [Feltöltés GIT repository-ba - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268848-feltoltes-git-repository-ba-gyakorlat)
+* [X] Feltöltés GIT repository-ba gyakorlati feladat
 
 ### Konzultációs gyakorlati feladatok
 

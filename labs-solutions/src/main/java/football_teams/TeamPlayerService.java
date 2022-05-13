@@ -20,7 +20,7 @@ public class TeamPlayerService {
         } else if (hasEnoughtBudget(team, player)) {
             financialOperations(teamId, playerId, team, player);
         } else {
-            throw new IllegalArgumentException("Cannot transfer player, Team budget: "
+            throw new NotEnoughBudgetException("Cannot transfer player, Team budget: "
                     + team.getBudget());
         }
     }

@@ -1,5 +1,0 @@
-.idea
-*.iml
-target
-META-INF
-../jpa-solutions/src/main/resources/META-INF/persistence.xml

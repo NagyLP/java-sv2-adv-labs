@@ -35,6 +35,9 @@ public class Training {
         List<Integer> b = new ArrayList<>(List.of(3, 6, 10, 2));
 
         System.out.println(compareTriplets(a, b));
+        int digit = 1012 % 10;
+        System.out.println(digit);
+        System.out.println(1012/10);
 
     }
 }

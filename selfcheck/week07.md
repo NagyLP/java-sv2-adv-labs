@@ -4,8 +4,8 @@
 
 ### Spring Boot webes alkalmazás - REST API
 
-* [ ] [Webes alkalmazás videó](https://e-learning.training360.com/courses/take/architect/lessons/18118985-webes-alkalmazas)
-* [ ] [REST webszolgáltatások videó](https://e-learning.training360.com/courses/take/architect/lessons/18119181-rest-webszolgaltatasok)
+* [X] [Webes alkalmazás videó](https://e-learning.training360.com/courses/take/architect/lessons/18118985-webes-alkalmazas)
+* [X] [REST webszolgáltatások videó](https://e-learning.training360.com/courses/take/architect/lessons/18119181-rest-webszolgaltatasok)
 * [ ] [REST webszolgáltatások - GET művelet videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549195-rest-webszolgaltatasok-get-muvelet)
 * [ ] [REST webszolgáltatások - GET művelet - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268878-rest-webszolgaltatasok-get-muvelet-gyakorlat)
 * [ ] REST webszolgáltatások - GET művelet gyakorlati feladat

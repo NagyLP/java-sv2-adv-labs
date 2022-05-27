@@ -12,7 +12,7 @@ public class IncrementController {
         this.service = service;
     }
 
-    @GetMapping("/number")
+    @GetMapping("/")
     public int increment() {
         return service.increment();
     }

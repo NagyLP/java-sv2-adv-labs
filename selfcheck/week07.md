@@ -7,8 +7,8 @@
 * [X] [Webes alkalmazás videó](https://e-learning.training360.com/courses/take/architect/lessons/18118985-webes-alkalmazas)
 * [X] [REST webszolgáltatások videó](https://e-learning.training360.com/courses/take/architect/lessons/18119181-rest-webszolgaltatasok)
 * [X] [REST webszolgáltatások - GET művelet videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549195-rest-webszolgaltatasok-get-muvelet)
-* [ ] [REST webszolgáltatások - GET művelet - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268878-rest-webszolgaltatasok-get-muvelet-gyakorlat)
-* [ ] REST webszolgáltatások - GET művelet gyakorlati feladat
+* [X] [REST webszolgáltatások - GET művelet - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268878-rest-webszolgaltatasok-get-muvelet-gyakorlat)
+* [X] REST webszolgáltatások - GET művelet gyakorlati feladat
 * [ ] [GET műveletek paraméterezése videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548795-get-muveletek-parameterezese)
 * [ ] [GET műveletek paraméterezése - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268942-get-muveletek-parameterezese-gyakorlat)
 * [ ] GET műveletek paraméterezése gyakorlati feladat
@@ -19,4 +19,4 @@
 
 ### Konzultációs gyakorlati feladatok
 
-* [ ] Az [itt](https://github.com/Strukturavaltas2-Halado-Java/java-strukturavalto2-halado/blob/master/labs.md) leírt, erre a hétre kiadott gyakorlati feladat(ok). 
+* [X] Az [itt](https://github.com/Strukturavaltas2-Halado-Java/java-strukturavalto2-halado/blob/master/labs.md) leírt, erre a hétre kiadott gyakorlati feladat(ok). 

@@ -12,9 +12,9 @@
 * [X] [GET műveletek paraméterezése videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548795-get-muveletek-parameterezese)
 * [X] [GET műveletek paraméterezése - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23268942-get-muveletek-parameterezese-gyakorlat)
 * [X] GET műveletek paraméterezése gyakorlati feladat
-* [ ] [REST webszolgáltatások POST és DELETE művelet videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548584-rest-webszolgaltatasok-post-es-delete-muvelet)
-* [ ] [REST webszolgáltatások POST és DELETE művelet - gyakorlat - Create videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269065-rest-webszolgaltatasok-post-es-delete-muvelet-gyakorlat-create)
-* [ ] [REST webszolgáltatások POST és DELETE művelet - gyakorlat - Update és delete videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269078-rest-webszolgaltatasok-post-es-delete-muvelet-gyakorlat-update-es-delete)
+* [X] [REST webszolgáltatások POST és DELETE művelet videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548584-rest-webszolgaltatasok-post-es-delete-muvelet)
+* [X] [REST webszolgáltatások POST és DELETE művelet - gyakorlat - Create videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269065-rest-webszolgaltatasok-post-es-delete-muvelet-gyakorlat-create)
+* [X] [REST webszolgáltatások POST és DELETE művelet - gyakorlat - Update és delete videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269078-rest-webszolgaltatasok-post-es-delete-muvelet-gyakorlat-update-es-delete)
 * [ ]  gyakorlati feladatok
 
 ### Konzultációs gyakorlati feladatok

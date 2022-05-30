@@ -26,6 +26,13 @@ public class LocationsController {
         return locationsService.fetchLocationById(id);
     }
 
+    @PostMapping
+    public LocationDto createLocation(@RequestBody CreateLocationCommand command){
+        return locationsService.createLocation(command);
+    }
+
+    public LocationDto updateLocation()
+
 
 //    @GetMapping()
 //    public List<LocationDto> getLocation() {

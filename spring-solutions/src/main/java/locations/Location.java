@@ -20,15 +20,15 @@ public class Location {
         this.lon = lon;
     }
 
-    @Override
-    public String toString() {
-        return "Location{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lat=" + lat +
-                ", lon=" + lon +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Location{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", lat=" + lat +
+//                ", lon=" + lon +
+//                '}';
+//    }
 
     //    public Location(Long id, String name, double lat, double lon) {
 //        this.id = id;

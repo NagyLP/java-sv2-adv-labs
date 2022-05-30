@@ -3,7 +3,6 @@ package locations;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 
@@ -11,9 +10,7 @@ import org.springframework.context.annotation.Bean;
 public class LocationsSpringApplication {
 
     public static void main(String[] args) {
-        try (ConfigurableApplicationContext configurableApplicationContext =
-                     SpringApplication.run(LocationsSpringApplication.class, args)) {
-        }
+        SpringApplication.run(LocationsSpringApplication.class, args);
     }
 
     @Bean

@@ -1,2 +1,0 @@
-- docker save image_név (forrás) > proba.tar (cél)
-- docker build -t (névparaméter java_locations (név-kisbetűvel) .

@@ -17,21 +17,34 @@ public class LocationsController {
     }
 
     @GetMapping
-    public List<LocationDto> getLocations(@RequestParam Optional<String> prefix) {
+    public List<LocationDTO> getLocations(
+            @RequestParam Optional<String> prefix) {
         return locationsService.getLocations(prefix);
     }
 
     @GetMapping("/{id}")
-    public LocationDto fetchLocationsById(@PathVariable("id") long id) {
+    public LocationDTO fetchLocationsById(
+            @PathVariable("id") long id) {
         return locationsService.fetchLocationById(id);
     }
 
     @PostMapping
-    public LocationDto createLocation(@RequestBody CreateLocationCommand command){
+    public LocationDTO createLocation(@RequestBody CreateLocationCommand command) {
         return locationsService.createLocation(command);
     }
 
-    public LocationDto updateLocation()
+    @PutMapping(value = "/{id}")
+    public LocationDTO updateLocation(
+            @PathVariable("id") long id,
+            @RequestBody UpdateLocationCommand command) {
+        return locationsService.updateLocation(id, command);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteLocation(@PathVariable("id") long id) {
+        locationsService.deleteLocation(id);
+    }
+
 
 
 //    @GetMapping()

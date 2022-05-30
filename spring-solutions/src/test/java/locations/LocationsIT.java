@@ -15,12 +15,12 @@ class LocationsIT {
     LocationsController controller;
 
 
-    @Test
-    void testLocation() {
-        controller = new LocationsController(new LocationsService(List.of(new Location(1L, "Test", 2, 3))));
-        assertThat(controller.getLocation())
-                .isNotNull()
-                .hasSize(47)
-                .contains("");
-    }
+//    @Test
+//    void testLocation() {
+//        controller = new LocationsController(new LocationsService(List.of(new Location(1L, "Test", 2, 3))));
+//        assertThat(controller.getLocation())
+//                .isNotNull()
+//                .hasSize(47)
+//                .contains("");
+//    }
 }

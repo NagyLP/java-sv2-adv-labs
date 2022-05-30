@@ -21,14 +21,14 @@ class LocationsControllerTest {
     @InjectMocks
     LocationsController testLocationsController;
 
-    @Test
-    void testGetLocation() {
-        when(testLocationsService.getLocations()).thenReturn(List.of(new Location(
-                1L, "Budapest", 47.1234, 19.1234)));
-
-        assertThat(testLocationsController.getLocation())
-                .isNotNull()
-                .isEqualTo(String.valueOf(List.of(new Location(
-                        1L, "Budapest", 47.1234, 19.1234))));
-    }
+//    @Test
+//    void testGetLocation() {
+//        when(testLocationsService.getLocations()).thenReturn(List.of(new Location(
+//                1L, "Budapest", 47.1234, 19.1234)));
+//
+//        assertThat(testLocationsController.getLocation())
+//                .isNotNull()
+//                .isEqualTo(String.valueOf(List.of(new Location(
+//                        1L, "Budapest", 47.1234, 19.1234))));
+//    }
 }

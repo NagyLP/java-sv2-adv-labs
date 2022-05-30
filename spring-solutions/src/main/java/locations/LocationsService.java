@@ -17,8 +17,8 @@ public class LocationsService {
 
     private final ModelMapper modelMapper;
 
-// SZÁLBIZTOS
-    private AtomicLong idGenerator = new AtomicLong();
+    // SZÁLBIZTOS
+    private final AtomicLong idGenerator = new AtomicLong();
 
     private final List<Location> locations = Collections.synchronizedList(new ArrayList<>(List.of(
             new Location(idGenerator.incrementAndGet(), "Langerhans-szigetek", 0.001, 0.001),
@@ -39,8 +39,8 @@ public class LocationsService {
 //        return modelMapper.map(locations, targetGetType);
 //    }
 
-    public List<LocationDto> getLocations(Optional<String> prefix) {
-        Type targetGetType = new TypeToken<List<LocationDto>>() {}
+    public List<LocationDTO> getLocations(Optional<String> prefix) {
+        Type targetGetType = new TypeToken<List<LocationDTO>>() {}
                 .getType();
         List<Location> filteredLocations = locations.stream()
                 .filter(location -> prefix.isEmpty()
@@ -49,19 +49,38 @@ public class LocationsService {
         return modelMapper.map(filteredLocations, targetGetType);
     }
 
-    public LocationDto fetchLocationById(long id) {
+    public LocationDTO fetchLocationById(long id) {
         return modelMapper.map(
                 locations.stream()
                         .filter(location -> location.getId() == id)
                         .findAny()
                         .orElseThrow(() -> new IllegalArgumentException("Location ID not fund: " + id))
-                , LocationDto.class);
+                , LocationDTO.class);
     }
 
-    public LocationDto createLocation(CreateLocationCommand command) {
+    public LocationDTO createLocation(CreateLocationCommand command) {
         Location location = new Location(
                 idGenerator.incrementAndGet(), command.getName(), command.getLat(), command.getLon());
         locations.add(location);
-        return modelMapper.map(location, LocationDto.class);
+        return modelMapper.map(location, LocationDTO.class);
+    }
+
+    public LocationDTO updateLocation(long id, UpdateLocationCommand command) {
+        Location location = locations.stream()
+                .filter(l -> l.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
+        location.setName(command.getName());
+        location.setLat(command.getLat());
+        location.setLon(command.getLon());
+        return modelMapper.map(location, LocationDTO.class);
+    }
+
+    public void deleteLocation(long id) {
+        Location location = locations.stream()
+                .filter(l -> l.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
+        locations.remove(location);
     }
 }

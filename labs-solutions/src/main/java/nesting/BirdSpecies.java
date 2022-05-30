@@ -1,4 +1,4 @@
-package Nesting;
+package nesting;
 
 public enum BirdSpecies {
 

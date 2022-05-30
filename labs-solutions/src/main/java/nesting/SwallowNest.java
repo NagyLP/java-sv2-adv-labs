@@ -1,4 +1,4 @@
-package Nesting;
+package nesting;
 
 import javax.persistence.Entity;
 

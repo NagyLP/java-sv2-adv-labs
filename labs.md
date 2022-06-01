@@ -120,3 +120,25 @@ minden adattal együtt.<br>
 
 A `/users` végponton keresztül kapjuk meg a userek azonosítóit
 
+
+## Week 08
+
+### 2022-05-31
+
+A mai feladatban ismét egy filmekkel foglalkozó alkalmazást kell összeraknod.<br>
+
+A `Movie` entitásnak legyen egy azonosítója, egy címe, egy hossza, egy, az eddigi értékeléseket
+tartalmazó listája és egy értékelésátlaga.
+Minden egyes alkalommal amikor egy értékelést kap a film, akkor az értékelésátlag ennek megfelelően változik!<br>
+
+Legyen egy `MovieService` osztályod, ami listában tárolja a filmeket. Kezdetben a lista üres, később tudunk filmet hozzáadni. <br>
+
+Legyen egy `MovieController` ami alapértelmezetten az `api/movies` URL-en várja a kéréseket.<br>
+
+A következő funkciókat kell megvalósítani:
+
+* Lehessen lekérni az összes filmet illetve új filmet hozzáadni (cím és hossz) a `api/movies` végponton.
+* A `/{id}` URL-en keresztül lehessen egy aktuális filmet lekérdezni.
+* A `/{id}/ratings` URL-en keresztül lehessen egy filmre értékelést adni és az értékeléseit lekérdezni. GET esetén adjuk vissza a film értékeléseinek listáját. POST esetén egy számot várunk, de az értékelések listájával térünk vissza.
+
+

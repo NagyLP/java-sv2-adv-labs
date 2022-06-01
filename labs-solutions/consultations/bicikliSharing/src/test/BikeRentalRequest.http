@@ -1,0 +1,9 @@
+POST http://localhost:8080/api/rentals
+Accept: application/json
+Content-Type: application/json
+{
+  "bikeId": "BIKE567",
+  "userId": "USER124",
+  "lastRentFinish": "2022-05-23T09:36:12",
+  "km": 1.5
+}

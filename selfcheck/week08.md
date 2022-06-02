@@ -4,8 +4,8 @@
 
 ### Spring Boot webes alkalmazás - haladó
 
-* [ ] [Státuszkódok és hibakezelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548809-statuszkodok-es-hibakezeles)
-* [ ] [Státuszkódok és hibakezelés - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269112-statuszkodok-es-hibakezeles-gyakorlat)
+* [X] [Státuszkódok és hibakezelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548809-statuszkodok-es-hibakezeles)
+* [X] [Státuszkódok és hibakezelés - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269112-statuszkodok-es-hibakezeles-gyakorlat)
 * [ ] [Státuszkódok és hibakezelés problem-spring-web-starterrel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25839311-statuszkodok-es-hibakezeles-problem-spring-web-starterrel)
 * [ ] Státuszkódok és hibakezelés gyakorlati feladat
 * [ ] [Integrációs tesztelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549806-integracios-teszteles)

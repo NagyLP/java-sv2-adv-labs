@@ -27,12 +27,4 @@ public class Movie {
         this.ratings = ratings;
         this.averageRating = averageRating;
     }
-
-    //     public void setAverageRating() {
-//        int sumRates = 0;
-//        for (Integer rate : ratings) {
-//            sumRates += rate;
-//        }
-//        averageRating = (double) sumRates / ratings.size();
-//    }
 }

@@ -28,14 +28,14 @@ public class MoviesController {
         return moviesService.getMovieById(id);
     }
 
-    @PostMapping
-    public MovieDTO createMovie(@RequestBody CreateMovieCommand command) {
-        return moviesService.createMovie(command);
-    }
-
     @GetMapping("/{id}/ratings")
     public List<Integer> getRatings(@PathVariable("id") long id) {
         return moviesService.getMovieRatingsById(id);
+    }
+
+    @PostMapping
+    public MovieDTO createMovie(@RequestBody CreateMovieCommand command) {
+        return moviesService.createMovie(command);
     }
 
     @PutMapping(value = "/{id}/ratings")

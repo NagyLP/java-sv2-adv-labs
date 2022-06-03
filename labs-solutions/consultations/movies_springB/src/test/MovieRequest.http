@@ -1,0 +1,41 @@
+###
+GET http://localhost:8080/api/movies
+Accept: application/json
+
+###
+POST http://localhost:8080/api/movies
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Doctor Strange",
+  "lengthMinute": 115
+}
+
+###
+PUT http://localhost:8080/api/movies/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Doctor Strange 2",
+  "lengthMinute": 155
+}
+
+###
+GET http://localhost:8080/api/movies/1/ratings
+Accept: application/json
+
+###
+POST http://localhost:8080/api/movies/1/ratings
+Accept: application/json
+Content-Type: application/json
+
+{
+  "rating": 5
+}
+
+###
+GET http://localhost:8080/api/movies?minAvgRating4.5
+Accept: application/json
+

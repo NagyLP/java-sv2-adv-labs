@@ -1,4 +1,4 @@
-package movies_springb.exeptions;
+package springrestdemomovies.movie.exeptions;
 
 public class MovieNotFoundExeption extends RuntimeException {
 

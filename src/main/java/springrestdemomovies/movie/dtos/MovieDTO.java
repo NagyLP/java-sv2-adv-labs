@@ -1,4 +1,4 @@
-package movies_springb.dto;
+package springrestdemomovies.movie.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +14,8 @@ public class MovieDTO {
 
     private Long id;
     private String title;
-    private int lenghtMinute;
-    private List<Integer> ratings = new ArrayList<>();
+    private int lengthMinute;
+    private List<RatingDTO> ratings = new ArrayList<>();
     private double averageRating;
 
 }

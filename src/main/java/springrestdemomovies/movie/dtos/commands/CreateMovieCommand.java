@@ -1,4 +1,4 @@
-package movies_springb.dto.commands;
+package springrestdemomovies.movie.dtos.commands;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,5 +8,5 @@ import lombok.Data;
 public class CreateMovieCommand {
 
     private String title;
-    private int lenghtMinute;
+    private int lengthMinute;
 }

@@ -1,4 +1,4 @@
-package movies_springb;
+package springrestdemomovies.movie;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
@@ -16,9 +16,9 @@ public class MoviesSpringBApplication {
 
     @Bean
     public ModelMapper createModelMapper() {
-        ModelMapper createModelMapper = new ModelMapper();
-        createModelMapper.getConfiguration().setMatchingStrategy(
+        ModelMapper createdModelMapper = new ModelMapper();
+        createdModelMapper.getConfiguration().setMatchingStrategy(
                 MatchingStrategies.STRICT);
-        return createModelMapper;
+        return createdModelMapper;
     }
 }

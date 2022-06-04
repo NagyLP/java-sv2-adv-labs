@@ -1,8 +1,12 @@
-###
+### TELJES LISTA
 GET http://localhost:8080/api/locations
 Accept: application/json
 
-###
+### HIBAKÓD:500 -Nem létező ID- KEZELVE:404-re
+GET http://localhost:8080/api/locations/500
+Accept: application/json
+
+### STÁTUSZKÓD-KEZELVE 200-as 201-re
 POST http://localhost:8080/api/locations
 Content-Type: application/json
 Accept: application/json
@@ -22,7 +26,7 @@ Accept: application/json
   "name": "Endor"
 }
 
-###
+### STÁTUSZKÓD-KEZELVE 200-as 201-re
 DELETE http://localhost:8080/api/locations/2
 
 

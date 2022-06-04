@@ -7,7 +7,7 @@
 * [X] [Státuszkódok és hibakezelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20548809-statuszkodok-es-hibakezeles)
 * [X] [Státuszkódok és hibakezelés - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269112-statuszkodok-es-hibakezeles-gyakorlat)
 * [X] [Státuszkódok és hibakezelés problem-spring-web-starterrel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25839311-statuszkodok-es-hibakezeles-problem-spring-web-starterrel)
-* [ ] Státuszkódok és hibakezelés gyakorlati feladat
+* [X] Státuszkódok és hibakezelés gyakorlati feladat
 * [X] [Integrációs tesztelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549806-integracios-teszteles)
 * [X] [Integrációs tesztelés WebClient használatával videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/35320156-integracios-teszteles-webclient-hasznalataval)
 * [ ] [Integrációs tesztelés WebClient használatával - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/35320268-integracios-teszteles-webclient-hasznalataval-gyakorlat) 

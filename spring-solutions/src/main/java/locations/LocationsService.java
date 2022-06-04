@@ -54,7 +54,8 @@ public class LocationsService {
                 locations.stream()
                         .filter(location -> location.getId() == id)
                         .findAny()
-                        .orElseThrow(() -> new IllegalArgumentException("Location ID not fund: " + id))
+//                        .orElseThrow(() -> new IllegalArgumentException("Location ID not fund: " + id))
+                        .orElseThrow(() -> new LocationNotFoundException("Location not found: " + id))
                 , LocationDTO.class);
     }
 
@@ -69,7 +70,8 @@ public class LocationsService {
         Location location = locations.stream()
                 .filter(l -> l.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
+//                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
+                .orElseThrow(() -> new LocationNotFoundException("Location not found: " + id));
         location.setName(command.getName());
         location.setLat(command.getLat());
         location.setLon(command.getLon());
@@ -80,7 +82,8 @@ public class LocationsService {
         Location location = locations.stream()
                 .filter(l -> l.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
+//                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
+                .orElseThrow(() -> new LocationNotFoundException("Location not found: " + id));
         locations.remove(location);
     }
 }

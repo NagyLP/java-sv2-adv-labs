@@ -1,5 +1,9 @@
 package locations;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +18,10 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/locations")
+@Tag(name = "Location-Controller operations")
 public class LocationsController {
 
+    private final static String RED = "\u001B[31m";
     private final LocationsService locationsService;
 
     public LocationsController(LocationsService locationsService) {
@@ -24,13 +30,27 @@ public class LocationsController {
 
     @GetMapping
 //    public List<LocationDTO> getLocations(
+    @Operation(summary = "Find-Location by ID",
+               description = "Switch the details ranger.")
+    @ApiResponse(responseCode = "200",
+            description = "Locations-Query successful: \"We're in the pipe: 5 by 5\"")
+    @ApiResponse(responseCode = "404",
+               description = "Not found Location instance, my Lord.")
+
     public LocationsDTO getLocations(
+            @Parameter(description = "Location's prefix",
+                       example = "Bud")
             @RequestParam Optional<String> prefix) {
 //        return locationsService.getLocations(prefix);
         return new LocationsDTO(locationsService.getLocations(prefix));
     }
 
     @GetMapping("/{id}")
+    @ApiResponse(responseCode = "200",
+            description = "We're in the pipe: 5 by 5")
+    @ApiResponse(responseCode = "404",
+            description = "Danger Zone: Not found Location")
+
     public LocationDTO fetchLocationsById(
             @PathVariable("id") long id) {
         return locationsService.fetchLocationById(id);
@@ -48,11 +68,19 @@ public class LocationsController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary = "Location-Creator")
+    @ApiResponse(responseCode = "201",
+            description = "Location has been created.")
+
     public LocationDTO createLocation(@RequestBody CreateLocationCommand command) {
         return locationsService.createLocation(command);
     }
 
     @PutMapping(value = "/{id}")
+    @Operation(summary = "Changes-Status: Location")
+    @ApiResponse(responseCode = "200",
+                 description = "Status changing was successfully.")
+
     public LocationDTO updateLocation(
             @PathVariable("id") long id,
             @RequestBody UpdateLocationCommand command) {
@@ -61,6 +89,10 @@ public class LocationsController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(summary = "DELETE: Location")
+    @ApiResponse(responseCode = "204",
+                 description = "{id}"+" ID-s Location deleted: \"Location over man, Location over\"")
+
     public void deleteLocation(@PathVariable("id") long id) {
         locationsService.deleteLocation(id);
     }
@@ -80,6 +112,7 @@ public class LocationsController {
 
     @ExceptionHandler(LocationNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
+
     public ResponseEntity<Problem> handleNotFound(LocationNotFoundException lnfException) {
         Problem problem = Problem.builder()
                 .withType(URI.create("locations/NOT-FOUND"))

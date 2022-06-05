@@ -27,7 +27,7 @@ Accept: application/json
 }
 
 ### STÁTUSZKÓD-KEZELVE 200-as 201-re
-DELETE http://localhost:8080/api/locations/2
+DELETE http://localhost:8080/api/locations/1
 
 
 

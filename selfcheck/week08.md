@@ -10,11 +10,11 @@
 * [X] Státuszkódok és hibakezelés gyakorlati feladat
 * [X] [Integrációs tesztelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549806-integracios-teszteles)
 * [X] [Integrációs tesztelés WebClient használatával videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/35320156-integracios-teszteles-webclient-hasznalataval)
-* [ ] [Integrációs tesztelés WebClient használatával - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/35320268-integracios-teszteles-webclient-hasznalataval-gyakorlat) 
-* [ ] Integrációs tesztelés WebClient használatával gyakorlati feladat
-* [ ] [Swagger UI videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549801-swagger-ui)
-* [ ] [Swagger UI - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269284-swagger-ui-gyakorlat)
-* [ ] Swagger UI gyakorlati feladat
+* [X] [Integrációs tesztelés WebClient használatával - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/35320268-integracios-teszteles-webclient-hasznalataval-gyakorlat) 
+* [X] Integrációs tesztelés WebClient használatával gyakorlati feladat
+* [X] [Swagger UI videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549801-swagger-ui)
+* [X] [Swagger UI - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269284-swagger-ui-gyakorlat)
+* [X] Swagger UI gyakorlati feladat
 * [ ] [Validáció videó]()
 * [ ] [Validáció - gyakorlat videó]()
 * [ ] [Validáció problem-spring-web-starterrel videó]()  

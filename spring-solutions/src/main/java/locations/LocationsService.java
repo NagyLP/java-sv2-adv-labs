@@ -55,7 +55,7 @@ public class LocationsService {
                         .filter(location -> location.getId() == id)
                         .findAny()
 //                        .orElseThrow(() -> new IllegalArgumentException("Location ID not fund: " + id))
-                        .orElseThrow(() -> new LocationNotFoundException("Location not found: " + id))
+                        .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id))
                 , LocationDTO.class);
     }
 
@@ -71,7 +71,7 @@ public class LocationsService {
                 .filter(l -> l.getId() == id)
                 .findFirst()
 //                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
-                .orElseThrow(() -> new LocationNotFoundException("Location not found: " + id));
+                .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
         location.setName(command.getName());
         location.setLat(command.getLat());
         location.setLon(command.getLon());
@@ -83,7 +83,7 @@ public class LocationsService {
                 .filter(l -> l.getId() == id)
                 .findFirst()
 //                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
-                .orElseThrow(() -> new LocationNotFoundException("Location not found: " + id));
+                .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
         locations.remove(location);
     }
 }

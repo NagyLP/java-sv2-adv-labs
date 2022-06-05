@@ -18,7 +18,8 @@ public class Area {
     @ManyToMany
     private List<Activity> activities = new LinkedList<>();
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, mappedBy = "area")
+    @OneToMany(mappedBy = "area",
+               cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Map<String, City> cities = new HashMap<>();
 
     public Area() {

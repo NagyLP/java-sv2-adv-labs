@@ -72,7 +72,8 @@ public class LocationsController {
     @ApiResponse(responseCode = "201",
             description = "Location has been created.")
 
-    public LocationDTO createLocation(@RequestBody CreateLocationCommand command) {
+    public LocationDTO createLocation(
+            @RequestBody CreateLocationCommand command) {
         return locationsService.createLocation(command);
     }
 
@@ -93,7 +94,8 @@ public class LocationsController {
     @ApiResponse(responseCode = "204",
                  description = "{id}"+" ID-s Location deleted: \"Location over man, Location over\"")
 
-    public void deleteLocation(@PathVariable("id") long id) {
+    public void deleteLocation(
+            @PathVariable("id") long id) {
         locationsService.deleteLocation(id);
     }
 

@@ -15,10 +15,10 @@
 * [X] [Swagger UI videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20549801-swagger-ui)
 * [X] [Swagger UI - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269284-swagger-ui-gyakorlat)
 * [X] Swagger UI gyakorlati feladat
-* [ ] [Validáció videó]()
+* [X] [Validáció videó]()
 * [ ] [Validáció - gyakorlat videó]()
 * [ ] [Validáció problem-spring-web-starterrel videó]()  
-* [ ] Validáció gyakorlati feladatok
+* [X] Validáció gyakorlati feladatok
 
 ### Konzultációs gyakorlati feladatok
 

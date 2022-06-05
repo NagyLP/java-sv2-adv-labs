@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class CreateLocationCommand {
 
-    @NotNull
+    @NotNull(message = "Aye, aye Sir: Name can not be null.")
     @Schema(description = "Name of the Location",
             example = "Machu Picchu")
     private String name;

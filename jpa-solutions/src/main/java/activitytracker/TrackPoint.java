@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@NamedQuery(name = "findTrackPointCoordinatesByDate",query = "" +
-        "select new activitytracker.Coordinate(t.latitude, t.longitude) from TrackPoint t where t.activity.startTime > :time order by t.time")
+@NamedQuery(name = "findTrackPointCoordinatesByDate",query =
+        " select new activitytracker.Coordinate(t.latitude, t.longitude) from TrackPoint t where t.activity.startTime > :time order by t.time")
 public class TrackPoint {
 
     @Id

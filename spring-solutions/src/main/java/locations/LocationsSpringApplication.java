@@ -19,8 +19,9 @@ public class LocationsSpringApplication {
         return new ModelMapper();
     }
 
-    @Bean
-    public ObjectMapper objectMapper(){
-        return new ObjectMapper().findAndRegisterModules();
-    }
+    // Validáció
+//    @Bean
+//    public ObjectMapper objectMapper(){
+//        return new ObjectMapper().findAndRegisterModules();
+//    }
 }

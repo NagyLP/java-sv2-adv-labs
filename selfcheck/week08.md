@@ -17,9 +17,9 @@
 * [X] Swagger UI gyakorlati feladat
 * [X] [Validáció videó]()
 * [X] [Validáció - gyakorlat videó]()
-* [ ] [Validáció problem-spring-web-starterrel videó]()  
+* [X] [Validáció problem-spring-web-starterrel videó]()  
 * [X] Validáció gyakorlati feladatok
 
 ### Konzultációs gyakorlati feladatok
 
-* [ ] Az [itt](https://github.com/Strukturavaltas2-Halado-Java/java-strukturavalto2-halado/blob/master/labs.md) leírt, erre a hétre kiadott gyakorlati feladat(ok). 
+* [X] Az [itt](https://github.com/Strukturavaltas2-Halado-Java/java-strukturavalto2-halado/blob/master/labs.md) leírt, erre a hétre kiadott gyakorlati feladat(ok). 

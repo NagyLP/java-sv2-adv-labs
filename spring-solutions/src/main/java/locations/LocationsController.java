@@ -5,19 +5,19 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
+//import org.springframework.http.MediaType;
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
-import org.zalando.problem.Problem;
-import org.zalando.problem.Status;
+//import org.zalando.problem.Problem;
+//import org.zalando.problem.Status;
 
 //import java.util.List;
 import javax.validation.Valid;
-import java.net.URI;
-import java.util.List;
+//import java.net.URI;
+//import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
+//import java.util.stream.Collectors;
 
 
 @RestController
@@ -122,45 +122,45 @@ public class LocationsController {
 //    }
 
 
-    @ExceptionHandler(LocationNotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-
-    public ResponseEntity<Problem> handleNotFound(LocationNotFoundException lnfException) {
-        Problem problem = Problem.builder()
-                .withType(URI.create("locations/NOT-FOUND"))
-                .withTitle("NOT FOUND")
-                .withStatus(Status.NOT_FOUND)
-                .withDetail(lnfException.getMessage())
-                .build();
-        return ResponseEntity
-                .status(HttpStatus.NOT_FOUND)
-//    APPlication.json-ként jelenik meg a válasz header-jében
-                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
-//   -- || -- Törzsében pedig ez:
-                .body(problem);
-    }
-
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Problem> handleValidExeption(MethodArgumentNotValidException manvExeption){
-        List<Violation> violations =
-                manvExeption.getBindingResult().getFieldErrors().stream()
-                        .map(fieldError -> new Violation(fieldError.getField(), fieldError.getDefaultMessage()))
-                        .collect(Collectors.toList());
-        Problem problem = Problem.builder()
-                .withType(URI.create("locations/NOT-VALID"))
-                .withTitle("Error: Argument(s)")
-// 400-as STÁTUSZKÓD
-                .withStatus(Status.BAD_REQUEST)
-                .withDetail(manvExeption.getMessage())
-// HIBÁT TARTALMAZÓ JSON üzenetben egyedi mezők
-                .with("violations", violations)
-                .build();
-
-        return ResponseEntity
-                .status(HttpStatus.BAD_REQUEST)
-                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
-                .body(problem);
-    }
+//    @ExceptionHandler(LocationNotFoundException.class)
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//
+//    public ResponseEntity<Problem> handleNotFound(LocationNotFoundException lnfException) {
+//        Problem problem = Problem.builder()
+//                .withType(URI.create("locations/NOT-FOUND"))
+//                .withTitle("NOT FOUND")
+//                .withStatus(Status.NOT_FOUND)
+//                .withDetail(lnfException.getMessage())
+//                .build();
+//        return ResponseEntity
+//                .status(HttpStatus.NOT_FOUND)
+////    APPlication.json-ként jelenik meg a válasz header-jében
+//                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
+////   -- || -- Törzsében pedig ez:
+//                .body(problem);
+//    }
+//
+//
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public ResponseEntity<Problem> handleValidExeption(MethodArgumentNotValidException manvExeption){
+//        List<Violation> violations =
+//                manvExeption.getBindingResult().getFieldErrors().stream()
+//                        .map(fieldError -> new Violation(fieldError.getField(), fieldError.getDefaultMessage()))
+//                        .collect(Collectors.toList());
+//        Problem problem = Problem.builder()
+//                .withType(URI.create("locations/NOT-VALID"))
+//                .withTitle("Error: Argument(s)")
+//// 400-as STÁTUSZKÓD
+//                .withStatus(Status.BAD_REQUEST)
+//                .withDetail(manvExeption.getMessage())
+//// HIBÁT TARTALMAZÓ JSON üzenetben egyedi mezők
+//                .with("violations", violations)
+//                .build();
+//
+//        return ResponseEntity
+//                .status(HttpStatus.BAD_REQUEST)
+//                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
+//                .body(problem);
+//    }
 
 }

@@ -7,13 +7,17 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.zalando.problem.Problem;
 import org.zalando.problem.Status;
 
 //import java.util.List;
+import javax.validation.Valid;
 import java.net.URI;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -27,6 +31,7 @@ public class LocationsController {
     public LocationsController(LocationsService locationsService) {
         this.locationsService = locationsService;
     }
+
 
     @GetMapping
 //    public List<LocationDTO> getLocations(
@@ -44,6 +49,7 @@ public class LocationsController {
 //        return locationsService.getLocations(prefix);
         return new LocationsDTO(locationsService.getLocations(prefix));
     }
+
 
     @GetMapping("/{id}")
     @ApiResponse(responseCode = "200",
@@ -73,9 +79,11 @@ public class LocationsController {
             description = "Location has been created.")
 
     public LocationDTO createLocation(
+            @Valid
             @RequestBody CreateLocationCommand command) {
         return locationsService.createLocation(command);
     }
+
 
     @PutMapping(value = "/{id}")
     @Operation(summary = "Changes-Status: Location")
@@ -87,6 +95,7 @@ public class LocationsController {
             @RequestBody UpdateLocationCommand command) {
         return locationsService.updateLocation(id, command);
     }
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -112,6 +121,7 @@ public class LocationsController {
 //        return locations;
 //    }
 
+
     @ExceptionHandler(LocationNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
 
@@ -127,6 +137,29 @@ public class LocationsController {
 //    APPlication.json-ként jelenik meg a válasz header-jében
                 .contentType(MediaType.APPLICATION_PROBLEM_JSON)
 //   -- || -- Törzsében pedig ez:
+                .body(problem);
+    }
+
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Problem> handleValidExeption(MethodArgumentNotValidException manvExeption){
+        List<Violation> violations =
+                manvExeption.getBindingResult().getFieldErrors().stream()
+                        .map(fieldError -> new Violation(fieldError.getField(), fieldError.getDefaultMessage()))
+                        .collect(Collectors.toList());
+        Problem problem = Problem.builder()
+                .withType(URI.create("locations/NOT-VALID"))
+                .withTitle("Error: Argument(s)")
+// 400-as STÁTUSZKÓD
+                .withStatus(Status.BAD_REQUEST)
+                .withDetail(manvExeption.getMessage())
+// HIBÁT TARTALMAZÓ JSON üzenetben egyedi mezők
+                .with("violations", violations)
+                .build();
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .contentType(MediaType.APPLICATION_PROBLEM_JSON)
                 .body(problem);
     }
 

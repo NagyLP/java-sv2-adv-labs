@@ -17,6 +17,18 @@ Accept: application/json
   "lon": 29.0522
 }
 
+### Validáció
+POST http://localhost:8080/api/locations
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "",
+  "lat": -90.5233,
+  "lon": -180.0522
+}
+
+
 ### FELÜLÍRJA az összes adattagot/attribútomot, ha nincs benne adott elágazás.
 PUT http://localhost:8080/api/locations/2
 Content-Type: application/json

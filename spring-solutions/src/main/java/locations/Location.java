@@ -10,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "locations")
 public class Location {
 
     @Id
@@ -22,7 +23,7 @@ public class Location {
     @Column(name = "loc_lat")
     private double lat;
 
-    @Column(name = "loc_lat")
+    @Column(name = "loc_lon")
     private double lon;
 
     public Location(String name, double lat, double lon) {

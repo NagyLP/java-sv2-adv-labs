@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class LocationsService {
 
-    private LocationRepository repository;
+    private LocationsRepository repository;
     private final ModelMapper modelMapper;
     // SZÁLBIZTOS
     private final AtomicLong idGenerator = new AtomicLong();
@@ -26,13 +26,19 @@ public class LocationsService {
             new Location(idGenerator.incrementAndGet(), "Tatooine", 9_999_999.0, 9_999_999),
             new Location(idGenerator.incrementAndGet(), "Osli", 47.3760, 17.0460))));
 
+    public LocationsService(LocationsRepository repository, ModelMapper modelMapper) {
+        this.repository = repository;
+        this.modelMapper = modelMapper;
+    }
+
+
 //    public LocationsService(List<Location> locations) {
 //        this.locations = locations;
 //    }
 
-    public LocationsService(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
+//    public LocationsService(ModelMapper modelMapper) {
+//        this.modelMapper = modelMapper;
+//    }
 
 //    public List<LocationDto> getLocations() {
 //        Type targetGetType = new TypeToken<List<Location>>() {}

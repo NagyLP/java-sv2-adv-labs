@@ -18,9 +18,9 @@ public class LocationDTO {
     private double lon;
 
 
-//    public LocationDTO(String name, double lat, double lon) {
-//        this.name = name;
-//        this.lat = lat;
-//        this.lon = lon;
-//    }
+    public LocationDTO(String name, double lat, double lon) {
+        this.name = name;
+        this.lat = lat;
+        this.lon = lon;
+    }
 }

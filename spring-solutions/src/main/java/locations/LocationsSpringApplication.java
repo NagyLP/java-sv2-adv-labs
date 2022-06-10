@@ -22,15 +22,15 @@ public class LocationsSpringApplication {
         return new ModelMapper();
     }
 
-    @Bean
-    public DataSource datasource() {
-        return DataSourceBuilder.create()
-                .driverClassName("org.mariadb.jdbc.Driver")
-                .url("jdbc:mysql://localhost:3306/locations")
-                .username("root")
-                .password("root555")
-                .build();
-    }
+//    @Bean
+//    public DataSource datasource() {
+//        return DataSourceBuilder.create()
+//                .driverClassName("org.mariadb.jdbc.Driver")
+//                .url("jdbc:mysql://localhost:3306/locations")
+//                .username("root")
+//                .password("root555")
+//                .build();
+//    }
 
     // Validáció
 //    @Bean

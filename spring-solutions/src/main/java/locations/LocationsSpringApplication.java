@@ -27,8 +27,8 @@ public class LocationsSpringApplication {
         return DataSourceBuilder.create()
                 .driverClassName("org.mariadb.jdbc.Driver")
                 .url("jdbc:mysql://localhost:3306/locations")
-                .username("***")
-                .password("***")
+                .username("root")
+                .password("root555")
                 .build();
     }
 

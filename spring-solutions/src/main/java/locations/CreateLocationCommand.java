@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 
 @Data
 @NoArgsConstructor
@@ -18,8 +15,9 @@ public class CreateLocationCommand {
 
     @Schema(description = "Name of the Location",
             example = "Machu Picchu")
-    @NotNull(message = "Aye, aye Sir: Name can not be null.")
+//    @NotNull(message = "Aye, aye Sir: Name can not be null.")
     @NotBlank(message = "Name can not be blank, my Lord.")
+    @Size(min = 2, max = 25)
     private String name;
 
     @Schema(description = "Latitude of the Location",
@@ -34,5 +32,6 @@ public class CreateLocationCommand {
     @NotNull
     @Min(value = -180)
     @Max(value = 180)
+    @Size
     private double lon;
 }

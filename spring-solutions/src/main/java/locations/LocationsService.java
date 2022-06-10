@@ -14,6 +14,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class LocationsService {
 
     private LocationsRepository repository;
@@ -59,6 +60,7 @@ public class LocationsService {
         return modelMapper.map(filteredLocations, targetGetType);
     }
 
+
     public LocationDTO fetchLocationById(long id) {
         return modelMapper.map(
                 repository.findById(id)
@@ -66,9 +68,11 @@ public class LocationsService {
 //                        .filter(location -> location.getId() == id)
 //                        .findAny()
 //                        .orElseThrow(() -> new IllegalArgumentException("Location ID not fund: " + id))
-                        .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id))
+//                        .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id))
+                        .orElseThrow(() -> new LocationNotFoundException(id))
                 , LocationDTO.class);
     }
+
 
     public LocationDTO createLocation(CreateLocationCommand command) {
         Location location = new Location(
@@ -78,7 +82,8 @@ public class LocationsService {
         return modelMapper.map(location, LocationDTO.class);
     }
 
-    @Transactional
+
+//    @Transactional
     public LocationDTO updateLocation(long id, UpdateLocationCommand command) {
         Location location =
                 repository.findById(id)
@@ -86,12 +91,14 @@ public class LocationsService {
 //                        .filter(l -> l.getId() == id)
 //                        .findFirst()
 //                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
-                        .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
+//                        .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
+                        .orElseThrow(() -> new LocationNotFoundException(id));
         location.setName(command.getName());
         location.setLat(command.getLat());
         location.setLon(command.getLon());
         return modelMapper.map(location, LocationDTO.class);
     }
+
 
     public void deleteLocation(long id) {
         repository.deleteById(id);
@@ -102,6 +109,7 @@ public class LocationsService {
 //                .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
 //        locations.remove(location);
     }
+
 
     public void deleteAllLocations(){
         repository.deleteAll();

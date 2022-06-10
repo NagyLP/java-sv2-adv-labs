@@ -6,7 +6,7 @@
 
 * [X] [Spring Data JPA videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20593051-spring-data-jpa)
 * [X] [Spring Data JPA - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23269586-spring-data-jpa-gyakorlat)
-* [ ] Spring Data JPA gyakorlati feladat
+* [X] Spring Data JPA gyakorlati feladat
 * [X] [MariaDB videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20593037-mariadb)
 * [X] [MariaDB - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/23829522-mariadb-gyakorlat)
 * [ ] MariaDB gyakorlati feladat

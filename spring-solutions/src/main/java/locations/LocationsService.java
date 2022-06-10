@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,8 +16,8 @@ import java.util.stream.Collectors;
 @Service
 public class LocationsService {
 
+    private LocationRepository repository;
     private final ModelMapper modelMapper;
-
     // SZÁLBIZTOS
     private final AtomicLong idGenerator = new AtomicLong();
 
@@ -39,10 +40,13 @@ public class LocationsService {
 //        return modelMapper.map(locations, targetGetType);
 //    }
 
+
     public List<LocationDTO> getLocations(Optional<String> prefix) {
-        Type targetGetType = new TypeToken<List<LocationDTO>>() {}
+        Type targetGetType = new TypeToken<List<LocationDTO>>() {
+        }
                 .getType();
-        List<Location> filteredLocations = locations.stream()
+        List<Location> filteredLocations = repository.findAll()
+                .stream()
                 .filter(location -> prefix.isEmpty()
                         || location.getName().toLowerCase().startsWith(prefix.get().toLowerCase()))
                 .collect(Collectors.toList());
@@ -51,9 +55,10 @@ public class LocationsService {
 
     public LocationDTO fetchLocationById(long id) {
         return modelMapper.map(
-                locations.stream()
-                        .filter(location -> location.getId() == id)
-                        .findAny()
+                repository.findById(id)
+//                locations.stream()
+//                        .filter(location -> location.getId() == id)
+//                        .findAny()
 //                        .orElseThrow(() -> new IllegalArgumentException("Location ID not fund: " + id))
                         .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id))
                 , LocationDTO.class);
@@ -62,16 +67,20 @@ public class LocationsService {
     public LocationDTO createLocation(CreateLocationCommand command) {
         Location location = new Location(
                 idGenerator.incrementAndGet(), command.getName(), command.getLat(), command.getLon());
-        locations.add(location);
+        repository.save(location);
+//        locations.add(location);
         return modelMapper.map(location, LocationDTO.class);
     }
 
+    @Transactional
     public LocationDTO updateLocation(long id, UpdateLocationCommand command) {
-        Location location = locations.stream()
-                .filter(l -> l.getId() == id)
-                .findFirst()
+        Location location =
+                repository.findById(id)
+//                locations.stream()
+//                        .filter(l -> l.getId() == id)
+//                        .findFirst()
 //                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
-                .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
+                        .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
         location.setName(command.getName());
         location.setLat(command.getLat());
         location.setLon(command.getLon());
@@ -79,11 +88,16 @@ public class LocationsService {
     }
 
     public void deleteLocation(long id) {
-        Location location = locations.stream()
-                .filter(l -> l.getId() == id)
-                .findFirst()
+        repository.deleteById(id);
+//        Location location = locations.stream()
+//                .filter(l -> l.getId() == id)
+//                .findFirst()
 //                .orElseThrow(() -> new IllegalArgumentException("Location not found: " + id));
-                .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
-        locations.remove(location);
+//                .orElseThrow(() -> new LocationNotFoundException("Location not found ID: " + id));
+//        locations.remove(location);
+    }
+
+    public void deleteAllLocations(){
+        repository.deleteAll();
     }
 }

@@ -33,11 +33,12 @@ class LocationsControllerWebMvcIT {
 
     @Test
     void testGetLocations() throws Exception {
-        when(service.getLocations(any())).thenReturn(List.of(new LocationDTO(1L, "Róma", 41.90383, 12.50557),
+        when(service.getLocations(any()))
+                .thenReturn(List.of(new LocationDTO(1L, "Róma", 41.90383, 12.50557),
                 new LocationDTO(2L, "Athén", 37.97954, 23.72638)));
 
         mockMvc.perform(get("/api/locations"))
-                //            .andDo(print());
+//.andDo(print());
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("locations[0].name", equalTo("Róma")))
                 .andExpect(jsonPath("locations[1].name", equalTo("Athén")));
@@ -45,7 +46,8 @@ class LocationsControllerWebMvcIT {
 
     @Test
     void testFindLocationById() throws Exception {
-        when(service.fetchLocationById(anyLong())).thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
+        when(service.fetchLocationById(anyLong()))
+                .thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
 
         mockMvc.perform(get("/api/locations/2"))
                 .andExpect(status().isOk())
@@ -68,7 +70,8 @@ class LocationsControllerWebMvcIT {
 
     @Test
     void testCreateLocation2() throws Exception {
-        when(service.createLocation(any())).thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
+        when(service.createLocation(any()))
+                .thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
 
         CreateLocationCommand command = new CreateLocationCommand("Moszkva", 55.76961, 37.63722);
         String json = objectMapper.writeValueAsString(command);
@@ -80,7 +83,8 @@ class LocationsControllerWebMvcIT {
 
     @Test
     void testUpdateLocation() throws Exception {
-        when(service.updateLocation(anyLong(), any())).thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
+        when(service.updateLocation(anyLong(), any()))
+                .thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
 
         mockMvc.perform(put("/api/locations/2").contentType(APPLICATION_JSON)
                         .content("{\n" +
@@ -94,7 +98,8 @@ class LocationsControllerWebMvcIT {
 
     @Test
     void testUpdateLocation2() throws Exception {
-        when(service.updateLocation(anyLong(), any())).thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
+        when(service.updateLocation(anyLong(), any()))
+                .thenReturn(new LocationDTO(2L, "Athén", 37.97954, 23.72638));
 
         CreateLocationCommand command = new CreateLocationCommand("Moszkva", 55.76961, 37.63722);
         String json = objectMapper.writeValueAsString(command);

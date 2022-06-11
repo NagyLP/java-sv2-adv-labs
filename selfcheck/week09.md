@@ -12,8 +12,8 @@
 * [X] MariaDB gyakorlati feladat
 * [X] [Integrációs tesztelés videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20593050-integracios-teszteles)
 * [X] [Integrációs tesztelés - gyakorlat - H2 videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231026-integracios-teszteles-gyakorlat-h2)
-* [ ] [Integrációs tesztelés - gyakorlat - MariaDB videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231052-integracios-teszteles-gyakorlat-mariadb)  
-* [ ] Integrációs tesztelés gyakorlati feladatok
+* [X] [Integrációs tesztelés - gyakorlat - MariaDB videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231052-integracios-teszteles-gyakorlat-mariadb)  
+* [X] Integrációs tesztelés gyakorlati feladatok
 * [ ] [Alkalmazás futtatása Dockerben MariaDB-vel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20592977-alkalmazas-futtatasa-dockerben-mariadb-vel)
 * [ ] [Alkalmazás futtatása Dockerben MariaDB-vel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231384-alkalmazas-futtatasa-dockerben-mariadb-vel-gyakorlat)
 * [ ] Alkalmazás futtatása Dockerben MariaDB-vel gyakorlati feladat

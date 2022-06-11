@@ -32,6 +32,5 @@ public class CreateLocationCommand {
     @NotNull
     @Min(value = -180)
     @Max(value = 180)
-    @Size
     private double lon;
 }

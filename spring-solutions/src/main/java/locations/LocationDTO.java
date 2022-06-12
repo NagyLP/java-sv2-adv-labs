@@ -3,9 +3,6 @@ package locations;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.modelmapper.internal.bytebuddy.asm.Advice;
-
-import javax.validation.constraints.DecimalMax;
 
 @Data
 @NoArgsConstructor

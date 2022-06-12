@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -92,7 +91,7 @@ class LocationsIT {
 
     @Test
     void testFindLocationById() {
-        LocationDTO expected = controller.fetchLocationsById(2);
+        LocationDTO expected = controller.fetchLocationById(2);
 
         assertEquals("Róma", expected.getName());
     }
@@ -101,7 +100,7 @@ class LocationsIT {
     void testUpdateLocation() {
         controller.updateLocation(2, new UpdateLocationCommand("Róma", 2.2, 3.3));
 
-        LocationDTO expected = controller.fetchLocationsById(2);
+        LocationDTO expected = controller.fetchLocationById(2);
 
         assertEquals("Róma", expected.getName());
         assertEquals(2.2, expected.getLat());

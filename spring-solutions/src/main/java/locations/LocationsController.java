@@ -4,7 +4,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 //import org.springframework.http.MediaType;
 //import org.springframework.http.ResponseEntity;
@@ -58,13 +57,13 @@ public class LocationsController {
     @ApiResponse(responseCode = "404",
             description = "Danger Zone: Not found Location")
 
-    public LocationDTO fetchLocationsById(
+    public LocationDTO fetchLocationById(
             @PathVariable("id") long id) {
         return locationsService.fetchLocationById(id);
     }
 
 //    @GetMapping("/{id}")
-//    public ResponseEntity fetchLocationsById(@PathVariable("id") long id) {
+//    public ResponseEntity fetchLocationById(@PathVariable("id") long id) {
 //        try {
 //            return ResponseEntity.ok(
 //                    locationsService.fetchLocationById(id));

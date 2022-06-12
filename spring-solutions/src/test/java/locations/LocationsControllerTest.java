@@ -1,6 +1,5 @@
 package locations;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -83,7 +82,7 @@ class LocationsControllerTest {
 //        LocationDTO expected = testLocationsController.fetchLocationsById(2);
         when(testLocationsService.fetchLocationById(anyLong()))
                 .thenReturn(new LocationDTO("Róma", 2.2, 3.3));
-        LocationDTO expected = testLocationsController.fetchLocationsById(2);
+        LocationDTO expected = testLocationsController.fetchLocationById(2);
 
         assertEquals("Róma", expected.getName());
     }

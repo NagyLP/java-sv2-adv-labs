@@ -1,4 +1,4 @@
 FROM openjdk:17
-WORKDIR app
+WORKDIR /opt/app
 COPY target/*.jar .
-ENTRYPOINT ["java", "-jar", "/opt/app/locations.jar"]
+CMD ["java", "-jar", "/opt/app/locations.jar"]

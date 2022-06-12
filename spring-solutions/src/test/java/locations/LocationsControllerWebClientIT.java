@@ -32,7 +32,7 @@ class LocationsControllerWebClientIT {
                 .uri("/api/locations")
                 .bodyValue(new CreateLocationCommand(" "/* VAKSTRING-BlankString */ + " ", 90.01, 180.01))
                 .exchange()
-                .expectStatus().isCreated()
+                .expectStatus().isBadRequest()
 //                .expectBody()
 //                    .jsonPath("id").isEqualTo(1L)
 //                    .jsonPath("name").isEqualTo("Budapest")
@@ -41,7 +41,8 @@ class LocationsControllerWebClientIT {
 //                .expectBodyList()
                 .expectBody(LocationDTO.class)
 //                    .value(l -> assertEquals("Budapest", l.getName()));
-                .isEqualTo(new LocationDTO(1L, "Budapest", 47.497912, 19.040235));
+//                .isEqualTo(new LocationDTO(1L, "Budapest", 47.497912, 19.040235));
+                .isEqualTo(new LocationDTO(null, null, 0.0, 0.0));
 
 //        assertThat(locationsService.getLocations(Optional.of("Bu")))
 //                .hasSize(1)

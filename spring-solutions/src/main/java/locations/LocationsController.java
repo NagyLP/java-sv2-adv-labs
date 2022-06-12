@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 //import org.springframework.http.MediaType;
 //import org.springframework.http.ResponseEntity;
@@ -21,42 +22,31 @@ import java.util.Optional;
 
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/locations")
 @Tag(name = "Location-Controller operations")
 public class LocationsController {
 
-    private final static String RED = "\u001B[31m";
+    //    private final static String RED = "\u001B[31m";
     private final LocationsService locationsService;
-
-    public LocationsController(LocationsService locationsService) {
-        this.locationsService = locationsService;
-    }
 
 
     @GetMapping
 //    public List<LocationDTO> getLocations(
-    @Operation(summary = "Find-Location by ID",
-               description = "Switch the details ranger.")
-    @ApiResponse(responseCode = "200",
-            description = "Locations-Query successful: \"We're in the pipe: 5 by 5\"")
-    @ApiResponse(responseCode = "404",
-               description = "Not found Location instance, my Lord.")
-
+    @Operation(summary = "Find-Location by ID", description = "Switch the details ranger.")
+    @ApiResponse(responseCode = "200", description = "Locations-Query successful: \"We're in the pipe: 5 by 5\"")
+    @ApiResponse(responseCode = "404", description = "Not found Location instance, my Lord.")
     public LocationsDTO getLocations(
-            @Parameter(description = "Location's prefix",
-                       example = "Bud")
+            @Parameter(description = "Location's prefix", example = "Bud")
             @RequestParam Optional<String> prefix) {
-//        return locationsService.getLocations(prefix);
         return new LocationsDTO(locationsService.getLocations(prefix));
+//        return locationsService.getLocations(prefix);
     }
 
 
     @GetMapping("/{id}")
-    @ApiResponse(responseCode = "200",
-            description = "We're in the pipe: 5 by 5")
-    @ApiResponse(responseCode = "404",
-            description = "Danger Zone: Not found Location")
-
+    @ApiResponse(responseCode = "200", description = "We're in the pipe: 5 by 5")
+    @ApiResponse(responseCode = "404", description = "Danger Zone: Not found Location")
     public LocationDTO fetchLocationById(
             @PathVariable("id") long id) {
         return locationsService.fetchLocationById(id);
@@ -76,12 +66,9 @@ public class LocationsController {
 // STÁTUSZKÓD 200-ról 201-re változik.
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Location-Creator")
-    @ApiResponse(responseCode = "201",
-            description = "Location has been created.")
-
+    @ApiResponse(responseCode = "201", description = "Location has been created.")
     public LocationDTO createLocation(
-            @Valid
-            @RequestBody CreateLocationCommand command) {
+            @Valid @RequestBody CreateLocationCommand command) {
         return locationsService.createLocation(command);
     }
 
@@ -89,7 +76,7 @@ public class LocationsController {
     @PutMapping(value = "/{id}")
     @Operation(summary = "Changes-Status: Location")
     @ApiResponse(responseCode = "200",
-                 description = "Status changing was successfully.")
+            description = "Status changing was successfully.")
 
     public LocationDTO updateLocation(
             @PathVariable("id") long id,
@@ -102,7 +89,7 @@ public class LocationsController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @Operation(summary = "DELETE: Location")
     @ApiResponse(responseCode = "204",
-                 description = "{id}"+" ID-s Location deleted: \"Location over man, Location over\"")
+            description = "{id}" + " ID-s Location deleted: \"Location over man, Location over\"")
 
     public void deleteLocation(
             @PathVariable("id") long id) {

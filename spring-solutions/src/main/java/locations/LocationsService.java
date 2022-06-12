@@ -1,5 +1,6 @@
 package locations;
 
+import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class LocationsService {
 
     private LocationsRepository repository;
@@ -22,15 +24,15 @@ public class LocationsService {
     // SZÁLBIZTOS
     private final AtomicLong idGenerator = new AtomicLong();
 
-    private final List<Location> locations = Collections.synchronizedList(new ArrayList<>(List.of(
-            new Location(idGenerator.incrementAndGet(), "Langerhans-szigetek", 0.001, 0.001),
-            new Location(idGenerator.incrementAndGet(), "Tatooine", 9_999_999.0, 9_999_999),
-            new Location(idGenerator.incrementAndGet(), "Osli", 47.3760, 17.0460))));
+//    private final List<Location> locations = Collections.synchronizedList(new ArrayList<>(List.of(
+//            new Location(idGenerator.incrementAndGet(), "Langerhans-szigetek", 0.001, 0.001),
+//            new Location(idGenerator.incrementAndGet(), "Tatooine", 9_999_999.0, 9_999_999),
+//            new Location(idGenerator.incrementAndGet(), "Osli", 47.3760, 17.0460))));
 
-    public LocationsService(LocationsRepository repository, ModelMapper modelMapper) {
-        this.repository = repository;
-        this.modelMapper = modelMapper;
-    }
+//    public LocationsService(LocationsRepository repository, ModelMapper modelMapper) {
+//        this.repository = repository;
+//        this.modelMapper = modelMapper;
+//    }
 
 
 //    public LocationsService(List<Location> locations) {

@@ -17,9 +17,9 @@
 * [X] [Alkalmazás futtatása Dockerben MariaDB-vel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20592977-alkalmazas-futtatasa-dockerben-mariadb-vel)
 * [X] [Alkalmazás futtatása Dockerben MariaDB-vel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231384-alkalmazas-futtatasa-dockerben-mariadb-vel-gyakorlat)
 * [X] Alkalmazás futtatása Dockerben MariaDB-vel gyakorlati feladat
-* [ ] [Séma inicializálás Flyway-jel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20592999-sema-inicializalas-flyway-jel)
-* [ ] [Séma inicializálás Flyway-jel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231696-sema-inicializalas-flyway-jel-gyakorlat)
-* [ ] Séma inicializálás Flyway-jel gyakorlati feladat
+* [X] [Séma inicializálás Flyway-jel videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/20592999-sema-inicializalas-flyway-jel)
+* [X] [Séma inicializálás Flyway-jel - gyakorlat videó](https://e-learning.training360.com/courses/take/java-spring-boot-microservices/lessons/25231696-sema-inicializalas-flyway-jel-gyakorlat)
+* [X] Séma inicializálás Flyway-jel gyakorlati feladat
 
 ### Konzultációs gyakorlati feladatok
 

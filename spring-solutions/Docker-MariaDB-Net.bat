@@ -6,10 +6,8 @@ docker run -d -e MYSQL_DATABASE=locations -e MYSQL_USER=root -e MYSQL_PASSWORD=r
 docker stop locations
 docker rm locations
 
-docker run
-      -d \
-      -e SPRING_DATASOURCE_URL=jdbc:mariadb://locations-net-mariadb/locations \
-      -p 8080:8080 \
-      --network locations-net \
-      --name locations \
-      locations
+Maven package
+
+docker build -t locations-mariadb .
+
+docker run -d -e SPRING_DATASOURCE_URL=jdbc:mariadb://locations-net-mariadb/locations -e SPRING_DATASOURCE_USERNAME=root -e SPRING_DATASOURCE_ALLOW_EMPTY_PASSWORD=yes -p 8080:8080 --network locations-net --name locations-mariadb locations-mariadb

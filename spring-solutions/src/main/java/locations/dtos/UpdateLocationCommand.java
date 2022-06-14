@@ -25,6 +25,7 @@ public class UpdateLocationCommand {
     @NotNull
     @Min(value = -90)
     @Max(value = 90)
+    @Pattern(regexp = "[/D]*")
     private double lat;
 
 

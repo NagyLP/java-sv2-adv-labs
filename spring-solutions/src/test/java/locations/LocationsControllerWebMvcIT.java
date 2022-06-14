@@ -1,6 +1,10 @@
 package locations;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import locations.controller.LocationsController;
+import locations.dtos.CreateLocationCommand;
+import locations.dtos.LocationDTO;
+import locations.service.LocationsService;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.Matchers.equalTo;

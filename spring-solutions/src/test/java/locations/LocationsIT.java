@@ -1,5 +1,9 @@
 package locations;
 
+import locations.dtos.UpdateLocationCommand;
+import locations.model.Location;
+import locations.repository.LocationsRepository;
+import locations.service.LocationsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;

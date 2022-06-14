@@ -1,5 +1,10 @@
 package locations;
 
+import locations.controller.LocationsController;
+import locations.dtos.LocationDTO;
+import locations.dtos.LocationsDTO;
+import locations.dtos.UpdateLocationCommand;
+import locations.service.LocationsService;
 import org.junit.jupiter.api.Test;
 //import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -24,11 +29,11 @@ class LocationsControllerTest {
 
 //    @Autowired
     @Mock
-    LocationsService testLocationsService;
+LocationsService testLocationsService;
 
 //    @Autowired
     @InjectMocks
-    LocationsController testLocationsController;
+LocationsController testLocationsController;
 
 //    @Test
 //    void testGetLocation() {

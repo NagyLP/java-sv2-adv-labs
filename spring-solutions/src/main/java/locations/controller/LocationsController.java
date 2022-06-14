@@ -1,9 +1,14 @@
-package locations;
+package locations.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import locations.dtos.CreateLocationCommand;
+import locations.dtos.LocationDTO;
+import locations.dtos.LocationsDTO;
+import locations.dtos.UpdateLocationCommand;
+import locations.service.LocationsService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 //import org.springframework.http.MediaType;

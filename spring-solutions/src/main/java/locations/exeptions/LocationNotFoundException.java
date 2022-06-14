@@ -1,4 +1,4 @@
-package locations;
+package locations.exeptions;
 
 import org.springframework.web.util.UriBuilder;
 import org.zalando.problem.AbstractThrowableProblem;

@@ -1,5 +1,9 @@
 package locations;
 
+import locations.controller.LocationsController;
+import locations.dtos.CreateLocationCommand;
+import locations.dtos.LocationDTO;
+import locations.dtos.UpdateLocationCommand;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

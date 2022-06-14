@@ -1,4 +1,4 @@
-package locations;
+package locations.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

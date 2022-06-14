@@ -1,4 +1,4 @@
-package locations;
+package locations.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

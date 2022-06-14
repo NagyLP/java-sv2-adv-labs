@@ -1,4 +1,4 @@
-package locations;
+package locations.controller;
 //
 //import org.springframework.context.annotation.ComponentScan;
 //

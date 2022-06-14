@@ -1,5 +1,11 @@
-package locations;
+package locations.service;
 
+import locations.dtos.CreateLocationCommand;
+import locations.dtos.LocationDTO;
+import locations.dtos.UpdateLocationCommand;
+import locations.exeptions.LocationNotFoundException;
+import locations.model.Location;
+import locations.repository.LocationsRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -7,8 +13,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;

@@ -1,0 +1,2 @@
+ALTER TABLE players
+    ADD name VARCHAR(255) NULL;

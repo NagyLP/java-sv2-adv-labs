@@ -1,0 +1,19 @@
+POST http://localhost:8080/api/players
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "dateOfBirth": "2002-12-01",
+  "playerPosition": "STRIKER"
+
+}
+
+###
+GET http://localhost:8080/api/players
+Accept: application/json
+
+###
+
+DELETE http://localhost:8080/api/players/5100
+

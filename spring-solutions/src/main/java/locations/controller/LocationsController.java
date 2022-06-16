@@ -38,7 +38,7 @@ public class LocationsController {
 
     @GetMapping
 //    public List<LocationDTO> getLocations(
-    @Operation(summary = "Find-Location by ID", description = "Switch the details ranger.")
+    @Operation(summary = "List All Locations", description = "Switch the details ranger.")
     @ApiResponse(responseCode = "200", description = "Locations-Query successful: \"We're in the pipe: 5 by 5\"")
     @ApiResponse(responseCode = "404", description = "Not found Location instance, my Lord.")
     public LocationsDTO getLocations(

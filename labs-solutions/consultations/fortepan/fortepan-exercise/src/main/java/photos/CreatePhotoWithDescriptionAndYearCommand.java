@@ -1,0 +1,15 @@
+package photos;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class CreatePhotoWithDescriptionAndYearCommand {
+
+    private String description;
+
+    private int year;
+}

@@ -29,7 +29,7 @@ class LocationsControllerIT {
 //@RepeatedTest(2)
 
     @BeforeEach
-    @Sql(statements = "delete from locations")
+//    @Sql(statements = "delete from locations")
     void setUp() {
         locationsController.createLocation(new CreateLocationCommand(
                 "Budapest", 47.497912, 19.040235));
